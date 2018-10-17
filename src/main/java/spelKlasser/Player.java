@@ -1,5 +1,6 @@
 package spelKlasser;
 
-public class Map {
+public class Player {
+	
 
 }
