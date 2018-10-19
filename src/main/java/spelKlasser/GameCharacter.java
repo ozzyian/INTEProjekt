@@ -1,13 +1,14 @@
 package spelKlasser;
 
-public class GameCharacter {
+abstract class GameCharacter {
+
 	private int velocity, maxHealth, attribute, armor; 
 	
-	public GameCharacter(int velocity, int maxHealth, int attribute, int armor) { 
-		this.velocity = velocity; 
-		this.maxHealth = maxHealth; 
+	public GameCharacter(int attribute) { 
+		velocity = 50; 
+		maxHealth = 100; 
 		this.attribute = attribute; 
-		this.armor = armor;
+		armor = 10;
 	}
 	
 	public int getVelocity() { 
@@ -26,5 +27,6 @@ public class GameCharacter {
 		return armor;
 	}
 	
+	abstract void setArmor();
 	
 }
