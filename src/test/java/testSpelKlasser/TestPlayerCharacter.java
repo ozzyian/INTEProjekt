@@ -9,7 +9,8 @@ class TestPlayerCharacter {
 	
 	@Test
 	void testSetArmor() {
-		
+		pc.setArmor();
+		assertEquals(11, pc.getArmor());
 	}
 
 }
