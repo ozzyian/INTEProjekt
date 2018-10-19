@@ -11,9 +11,10 @@ public class PlayerCharacter extends GameCharacter {
 		level = 1; 
 	}
 	
-	public void setArmor() {
-		int attribute = getAttribute();
+	public int getArmor() {
+		return 11;
 		
+	
 	}
 	
 }
