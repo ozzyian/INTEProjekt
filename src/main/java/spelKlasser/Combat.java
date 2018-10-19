@@ -1,6 +1,5 @@
 package spelKlasser;
 
-public class Player {
-	
+public class Combat {
 
 }
