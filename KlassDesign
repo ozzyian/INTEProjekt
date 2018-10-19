@@ -1,9 +1,8 @@
-SuperKlass : GameCharacter(abstrakt?) 	--> PlayerCharacter attribut: experience
-attribut:				--> MonsterCharacter attribut: dmg resistances (vårt att hitta ngt extra attribut)
-	namn
-	velocity
-	lvl (både monster och player bör ha level?)
-	armor
+SuperKlass : GameCharacter(abstrakt?) 	--> PlayerCharacter attribut: experience, level
+attribut:				--> MonsterCharacter attribut: enum Difficulty
+	namn - check
+	velocity - check (ska monster o player ha samma starthastighet?)
+	armor - (för monster: beroende på difficulty nivå, för player: beroende på attribut just nu) - check
 	maxHealth(räknas ut med en metod beroende på level + kanske items eller attribut om vi vill ha sådant?)
 	currentHealth? (räknas ut med en metod varje gång karaktären mottar en attack eller ngt?)
 	attacker/skillset? (en lista med attackklasser eller ngt kanske, vänta med det antagligen)				
