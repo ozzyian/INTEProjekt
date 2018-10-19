@@ -10,7 +10,13 @@ public class MonsterCharacter extends GameCharacter{
 	}
 	
 	public int getArmor() {
-		return 11;
+		if(diff == Difficulty.EASY) {
+			return getAttribute();
+		}else if(diff == Difficulty.MEDIUM) {
+			return getAttribute()*2;
+		}else {
+			return getAttribute()*3;
+		}
 	}
 
 }
