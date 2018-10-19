@@ -5,7 +5,7 @@ import spelKlasser.PlayerCharacter;
 import org.junit.jupiter.api.Test;
 
 class TestPlayerCharacter {
-	PlayerCharacter pc = new PlayerCharacter(10);
+	PlayerCharacter pc = new PlayerCharacter(10, "Hulken");
 	
 	@Test
 	void testGetArmor() {

@@ -5,8 +5,8 @@ public class PlayerCharacter extends GameCharacter {
 	
 	private int experience, level;
 	
-	public PlayerCharacter(int attribute) { 
-		super(attribute); 
+	public PlayerCharacter(int attribute, String name) { 
+		super(attribute, name); 
 		experience = 0;
 		level = 1; 
 	}
