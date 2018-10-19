@@ -3,15 +3,14 @@ package spelKlasser;
 
 public class MonsterCharacter extends GameCharacter{
 	
-	private int damageResistance;
-	
-	public MonsterCharacter(int attribute,int damageResistance) {
+	private Difficulty diff; 
+	public MonsterCharacter(int attribute,Difficulty diff) {
 		super(attribute);
-		this.damageResistance = damageResistance;
+		this.diff = diff;
 	}
 	
 	public int getArmor() {
-		
+		return 11;
 	}
 
 }

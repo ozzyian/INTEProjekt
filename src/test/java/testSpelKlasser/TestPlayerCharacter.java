@@ -8,7 +8,7 @@ class TestPlayerCharacter {
 	PlayerCharacter pc = new PlayerCharacter(10);
 	
 	@Test
-	void testSetArmor() {
+	void testGetArmor() {
 		assertEquals(30, pc.getArmor());
 	}
 
