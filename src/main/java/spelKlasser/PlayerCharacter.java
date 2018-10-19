@@ -12,9 +12,7 @@ public class PlayerCharacter extends GameCharacter {
 	}
 	
 	public int getArmor() {
-		return 11;
-		
-	
+		return getAttribute() *3;
 	}
 	
 }

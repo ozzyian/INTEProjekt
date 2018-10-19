@@ -10,7 +10,7 @@ public class MonsterCharacter extends GameCharacter{
 		this.damageResistance = damageResistance;
 	}
 	
-	public void setArmor() {
+	public int getArmor() {
 		
 	}
 
