@@ -21,5 +21,10 @@ class TestCombat {
 		assertSame(player, c.firstToAttack());
 	}
 	
+	void testGetWinner() {
+		assertEquals(player, c.getWinner());
+			
+	}
+	
 
 }
