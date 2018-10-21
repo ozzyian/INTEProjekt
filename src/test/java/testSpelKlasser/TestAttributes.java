@@ -9,8 +9,10 @@ class TestAttributes {
 	Attributes a = new Attributes();
 	
 	@Test
-	void test() {
-		
+	void testGetStrength() {
+		assertEquals(0, a.getStrength()); 
 	}
+	
+	
 
 }
