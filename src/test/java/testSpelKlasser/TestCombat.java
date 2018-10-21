@@ -5,12 +5,14 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class TestCombat {
-	
-	
+	MonsterCharacter monster = new MonsterCharacter(Difficulty.EASY, "monster");
+	PlayerCharacter player = new PlayerCharacter("player");
 	Combat c = new Combat(player, monster);
+	
 	@Test
 	void testPlayerNull() {
-		assertNotNull("inte null", c.player);
+		assertNotNull(c.getPlayer());
 	}
+	
 
 }
