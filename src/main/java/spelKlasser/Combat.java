@@ -18,7 +18,11 @@ public class Combat {
 	}
 	
 	public GameCharacter firstToAttack() {
-		return player;
+		if (player.getAgility()>monster.getAgility()) {
+			return player;
+		}
+		else
+			return monster;
 	}
 	
 }
