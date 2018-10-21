@@ -20,6 +20,6 @@ public class PlayerCharacter extends GameCharacter {
 	}
 	
 	public int getDamage() {
-		return 10;
+		return getAttribute()*2; 
 	}
 }

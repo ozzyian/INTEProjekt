@@ -13,7 +13,7 @@ class TestPlayerCharacter {
 	}
 	
 	void testGetDamage() {
-		assertEquals(10, pc.getDamage());
+		assertEquals(20, pc.getDamage());
 	}
 
 }
