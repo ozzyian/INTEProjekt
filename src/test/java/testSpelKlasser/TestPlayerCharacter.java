@@ -21,20 +21,11 @@ class TestPlayerCharacter {
 	}
 
 	void testGetStrength() {
-		assertEquals(0, a.getStrength()); 
+		assertEquals(0, pc.getStrength()); 
 	}
 	
 	void testGetAgility() { 
-		assertEquals(0, a.getAgility()); 
+		assertEquals(0, pc.getAgility()); 
 	}
 	
-	void testIncreaseStrength() { 
-		a.increaseStrength(); 
-		assertEquals(1, a.getStrength()); 
-	}
-	
-	void testIncreaseAgility() {
-		a.increaseAgility(); 
-		assertEquals(1, a.getAgility());
-	}
 }

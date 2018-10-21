@@ -26,7 +26,15 @@ abstract class GameCharacter {
 	public String getName() {
 		return name;
 	}
-
+	
+	public int getAgility() {
+		return agility;
+	}
+	
+	public int getStrength() {
+		return strength;
+	}
+	
 	abstract int getMaxHealth();
 	 		
 	abstract int getArmor();

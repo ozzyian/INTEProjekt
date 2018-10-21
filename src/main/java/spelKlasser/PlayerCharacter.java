@@ -1,7 +1,5 @@
 package spelKlasser;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class PlayerCharacter extends GameCharacter {
 	
 	private int experience, level;
@@ -13,15 +11,15 @@ public class PlayerCharacter extends GameCharacter {
 	}
 	
 	public int getArmor() {
-		return getAttribute() *3;
+		return getAgility() *3;
 	}
 	
 	public int getMaxHealth() {
-		return getAttribute()*3 + getBaseHealth();
+		return getStrength()*3 + getBaseHealth();
 	}
 	
 	public int getDamage() {
-		return getAttribute()*2; 
+		return getStrength()*2; 
 	}
 	
 }

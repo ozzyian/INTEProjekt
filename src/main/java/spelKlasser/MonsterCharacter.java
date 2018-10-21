@@ -11,31 +11,31 @@ public class MonsterCharacter extends GameCharacter{
 	
 	public int getArmor() {
 		if(diff == Difficulty.EASY) {
-			return attributes.getAgility();
+			return getAgility();
 		}else if(diff == Difficulty.MEDIUM) {
-			return getAttribute()*2;
+			return getAgility()*2;
 		}else {
-			return getAttribute()*3;
+			return getAgility()*3;
 		}
 	}
 	
 	public int getMaxHealth() {
 		if(diff == Difficulty.EASY) {
-			return getAttribute() + getBaseHealth();
+			return getStrength() + getBaseHealth();
 		}else if(diff == Difficulty.MEDIUM) {
-			return getAttribute()*2 + getBaseHealth();
+			return getStrength()*2 + getBaseHealth();
 		}else {
-			return getAttribute()*3 + getBaseHealth();
+			return getStrength()*3 + getBaseHealth();
 		} 
 	}
 	
 	public int getDamage() {
 		if(diff == Difficulty.EASY) {
-			return getAttribute();
+			return getStrength();
 		}else if(diff == Difficulty.MEDIUM) {
-			return getAttribute()*2;
+			return getStrength()*2;
 		}else {
-			return getAttribute()*3;
+			return getStrength()*3;
 		}
 	}
 
