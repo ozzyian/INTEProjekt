@@ -13,6 +13,8 @@ class TestAttributes {
 		assertEquals(0, a.getStrength()); 
 	}
 	
-	
+	void testGetAgility() { 
+		assertEquals(0, a.getAgility()); 
+	}
 
 }
