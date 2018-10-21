@@ -22,5 +22,9 @@ public class MonsterCharacter extends GameCharacter{
 	public int getMaxHealth() {
 		return 1; 
 	}
+	
+	public int getDamage() {
+		return 10;
+	}
 
 }

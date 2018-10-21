@@ -13,5 +13,9 @@ class TestMonsterCharacter {
 	void testGetArmor() {
 		assertEquals(10, mc.getArmor());
 	}
+	
+	void testGetDamage() {
+		assertEquals(10, mc.getDamage()); 
+	}
 
 }

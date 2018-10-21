@@ -19,4 +19,7 @@ public class PlayerCharacter extends GameCharacter {
 		return 1;
 	}
 	
+	public int getDamage() {
+		return 10;
+	}
 }
