@@ -11,5 +11,9 @@ class TestPlayerCharacter {
 	void testGetArmor() {
 		assertEquals(30, pc.getArmor());
 	}
+	
+	void testGetDamage() {
+		assertEquals(10, pc.getDamage());
+	}
 
 }

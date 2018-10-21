@@ -29,6 +29,7 @@ abstract class GameCharacter {
 	}
 	
 	abstract int getMaxHealth();
+	
 		
 	abstract int getArmor();
 	
