@@ -2,14 +2,17 @@ package spelKlasser;
 
 abstract class GameCharacter {
 
-	private int velocity, baseHealth, attribute; 
+	private int velocity, baseHealth, strength, agility; 
 	private String name; 
 	
-	public GameCharacter(int attribute, String name) { 
+	
+	public GameCharacter(String name) { 
 		velocity = 50; 
-		baseHealth = 100; 
-		this.attribute = attribute; 
+		baseHealth = 100;  
+		strength = 0;
+		agility = 0;
 		this.name = name;
+		;
 	}
 	
 	public int getVelocity() { 
@@ -20,14 +23,10 @@ abstract class GameCharacter {
 		return baseHealth;
 	}
 	
-	public int getAttribute() {
-		return attribute; 
-	}
-	
 	public String getName() {
 		return name;
 	}
-	
+
 	abstract int getMaxHealth();
 	 		
 	abstract int getArmor();

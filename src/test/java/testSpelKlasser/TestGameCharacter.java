@@ -6,11 +6,5 @@ import org.junit.jupiter.api.Test;
 
 class TestGameCharacter {
 	
-//	GameCharacter g = new GameCharacter(50, 50, 50, 50);
-//	
-//	@Test
-//	void testVelocity() {
-//		assertEquals(50, g.getVelocity());
-//	}
 
 }

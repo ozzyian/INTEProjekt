@@ -1,12 +1,13 @@
 package spelKlasser;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PlayerCharacter extends GameCharacter {
 	
 	private int experience, level;
 	
-	public PlayerCharacter(int attribute, String name) { 
-		super(attribute, name); 
+	public PlayerCharacter(String name) { 
+		super(name); 
 		experience = 0;
 		level = 1; 
 	}
@@ -22,4 +23,5 @@ public class PlayerCharacter extends GameCharacter {
 	public int getDamage() {
 		return getAttribute()*2; 
 	}
+	
 }

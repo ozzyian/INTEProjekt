@@ -5,7 +5,7 @@ import spelKlasser.PlayerCharacter;
 import org.junit.jupiter.api.Test;
 
 class TestPlayerCharacter {
-	PlayerCharacter pc = new PlayerCharacter(10, "Hulken");
+	PlayerCharacter pc = new PlayerCharacter("Hulken");
 	
 	@Test
 	void testGetArmor() {
@@ -20,4 +20,21 @@ class TestPlayerCharacter {
 		assertEquals(130, pc.getMaxHealth());
 	}
 
+	void testGetStrength() {
+		assertEquals(0, a.getStrength()); 
+	}
+	
+	void testGetAgility() { 
+		assertEquals(0, a.getAgility()); 
+	}
+	
+	void testIncreaseStrength() { 
+		a.increaseStrength(); 
+		assertEquals(1, a.getStrength()); 
+	}
+	
+	void testIncreaseAgility() {
+		a.increaseAgility(); 
+		assertEquals(1, a.getAgility());
+	}
 }
