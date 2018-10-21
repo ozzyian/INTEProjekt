@@ -14,7 +14,7 @@ class TestCombat {
 		assertNotNull(c.getPlayer());
 	}
 	void testMonsterNull() {
-		asserNotNull(c.getMonster());
+		assertNotNull(c.getMonster());
 	}
 	
 
