@@ -41,4 +41,7 @@ public class Combat {
 		}
 	}
 	
+	public GameCharacter getWinner() {
+		return player;
+	}
 }
