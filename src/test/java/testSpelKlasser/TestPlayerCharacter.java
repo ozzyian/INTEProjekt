@@ -9,7 +9,7 @@ class TestPlayerCharacter {
 	
 	@Test
 	void testGetArmor() {
-		assertEquals(30, pc.getArmor());
+		assertEquals(0, pc.getArmor());
 	}
 	
 	void testGetDamage() {

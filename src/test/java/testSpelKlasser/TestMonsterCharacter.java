@@ -11,11 +11,11 @@ class TestMonsterCharacter {
 	
 	@Test
 	void testGetArmor() {
-		assertEquals(10, mc.getArmor());
+		assertEquals(0, mc.getArmor());
 	}
 	
 	void testGetDamage() {
-		assertEquals(10, mc.getDamage()); 
+		assertEquals(0, mc.getDamage()); 
 	}
 	
 	void testGetMaxHealth() {
