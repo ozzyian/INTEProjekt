@@ -34,7 +34,7 @@ abstract class GameCharacter {
 	public int getStrength() {
 		return strength;
 	}
-	public void setAgility() {
+	public void increaseAgility() {
 		agility=+1;
 	}
 	
