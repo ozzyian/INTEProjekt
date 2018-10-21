@@ -34,6 +34,9 @@ abstract class GameCharacter {
 	public int getStrength() {
 		return strength;
 	}
+	public void setAgility() {
+		agility=+1;
+	}
 	
 	abstract int getMaxHealth();
 	 		

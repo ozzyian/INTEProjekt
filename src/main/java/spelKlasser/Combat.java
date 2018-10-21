@@ -16,4 +16,6 @@ public class Combat {
 	public MonsterCharacter getMonster() {
 		return monster;
 	}
+	
+	
 }
