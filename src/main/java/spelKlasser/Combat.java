@@ -17,5 +17,8 @@ public class Combat {
 		return monster;
 	}
 	
+	public GameCharacter firstToAttack() {
+		return player;
+	}
 	
 }

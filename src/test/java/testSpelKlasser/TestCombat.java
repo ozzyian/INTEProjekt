@@ -17,7 +17,7 @@ class TestCombat {
 		assertNotNull(c.getMonster());
 	}
 	void testFirstToAttack() {
-		assertTrue(firstToAttack().equals(player));
+		assertSame(player, c.firstToAttack());
 	}
 
 }
