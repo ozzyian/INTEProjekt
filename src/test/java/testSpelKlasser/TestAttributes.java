@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class TestAttributes {
 
-	Attribute a = new Attribute();
+	Attributes a = new Attributes();
 	
 	@Test
 	void test() {
