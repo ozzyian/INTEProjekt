@@ -20,5 +20,6 @@ class TestCombat {
 		player.increaseAgility();
 		assertSame(player, c.firstToAttack());
 	}
+	
 
 }

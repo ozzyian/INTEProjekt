@@ -1,5 +1,7 @@
 package spelKlasser;
 
+import java.util.Random;
+
 public class Combat {
 	PlayerCharacter player;
 	MonsterCharacter monster;
@@ -21,8 +23,22 @@ public class Combat {
 		if (player.getAgility()>monster.getAgility()) {
 			return player;
 		}
-		else
+		else if(monster.getAgility()> player.getAgility()) {
 			return monster;
+		}
+		else {
+			return randomFirstAttack();
+		}
+
+	}
+	private GameCharacter randomFirstAttack() {
+		Random random = new Random();
+		if(random.nextBoolean()) {
+			return player;
+		}
+		else {
+			return monster;
+		}
 	}
 	
 }
