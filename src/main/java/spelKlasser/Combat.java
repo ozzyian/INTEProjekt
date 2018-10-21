@@ -3,8 +3,10 @@ package spelKlasser;
 import java.util.Random;
 
 public class Combat {
-	PlayerCharacter player;
-	MonsterCharacter monster;
+	private PlayerCharacter player;
+	private MonsterCharacter monster;
+
+	
 	
 	public Combat(PlayerCharacter player, MonsterCharacter monster) {
 		this.player = player;
@@ -41,7 +43,13 @@ public class Combat {
 		}
 	}
 	
+	
+	
 	public GameCharacter getWinner() {
-		return player;
+		
+		
+		do {
+			
+		}while(true);
 	}
 }
