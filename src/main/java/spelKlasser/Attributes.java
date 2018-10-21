@@ -16,4 +16,7 @@ public class Attributes {
 			return agility; 
 		}
 		
+		public void increaseStrength() {
+			strength+=1; 
+		}
 }
