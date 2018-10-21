@@ -16,5 +16,10 @@ class TestAttributes {
 	void testGetAgility() { 
 		assertEquals(0, a.getAgility()); 
 	}
+	
+	void testIncreaseStrength() { 
+		a.increaseStrength(); 
+		assertEquals(1, a.getStrength()); 
+	}
 
 }

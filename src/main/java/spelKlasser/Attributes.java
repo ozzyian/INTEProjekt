@@ -15,4 +15,5 @@ public class Attributes {
 		public int getAgility() {
 			return agility; 
 		}
+		
 }
