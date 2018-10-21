@@ -16,7 +16,7 @@ public class PlayerCharacter extends GameCharacter {
 	}
 	
 	public int getMaxHealth() {
-		return 1;
+		return getAttribute()*3 + getBaseHealth();
 	}
 	
 	public int getDamage() {

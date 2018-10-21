@@ -17,5 +17,11 @@ class TestMonsterCharacter {
 	void testGetDamage() {
 		assertEquals(10, mc.getDamage()); 
 	}
+	
+	void testGetMaxHealth() {
+		assertEquals(110, mc.getMaxHealth());
+	}
+	
+	
 
 }

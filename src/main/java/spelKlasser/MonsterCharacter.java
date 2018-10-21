@@ -20,7 +20,13 @@ public class MonsterCharacter extends GameCharacter{
 	}
 	
 	public int getMaxHealth() {
-		return 1; 
+		if(diff == Difficulty.EASY) {
+			return getAttribute() + getBaseHealth();
+		}else if(diff == Difficulty.MEDIUM) {
+			return getAttribute()*2 + getBaseHealth();
+		}else {
+			return getAttribute()*3 + getBaseHealth();
+		} 
 	}
 	
 	public int getDamage() {

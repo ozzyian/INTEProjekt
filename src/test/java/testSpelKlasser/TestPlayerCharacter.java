@@ -15,5 +15,9 @@ class TestPlayerCharacter {
 	void testGetDamage() {
 		assertEquals(20, pc.getDamage());
 	}
+	
+	void testGetMaxHealth() {
+		assertEquals(130, pc.getMaxHealth());
+	}
 
 }
