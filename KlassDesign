@@ -7,6 +7,10 @@ attribut:				--> MonsterCharacter attribut: enum Difficulty
 	currentHealth? (räknas ut med en metod varje gång karaktären mottar en attack eller ngt?)
 	attacker/skillset? (en lista med attackklasser eller ngt kanske, vänta med det antagligen)
 	getdamage metod; räkna ut hur mycket skada per attack - klar men under utveckling 
+	attribut: str (extra HP och skada), agi (extra armor och velocity) - items påverkar, vilken typ av karaktär, lvl, påverkar HP
+	velocity ökas av agility - kvar 
+	lvl ökar attribut - kvar 
+	
 		
 Klass GameMap extends Jpanel
 attribut:
