@@ -4,11 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class MapTest {
+class MapBuilderTest {
 
-	/*@Test
+	@Test
 	void test() {
-		
-	}*/
+	}
 
 }

@@ -22,7 +22,7 @@ class PlayerTest {
 	void experienceTest() {
 		assertEquals(player.getExperience(), 0);
 	}
-	
+	//hej
 	@Test
 	void levelTest() {
 		assertEquals(player.getLevel(), 1);
