@@ -5,7 +5,7 @@ import java.util.Random;
 public class Combat {
 	private PlayerCharacter player;
 	private MonsterCharacter monster;
-
+	private boolean setFirstMonster;
 	
 	
 	public Combat(PlayerCharacter player, MonsterCharacter monster) {
@@ -35,7 +35,10 @@ public class Combat {
 	}
 	private GameCharacter randomFirstAttack() {
 		Random random = new Random();
-		if(random.nextBoolean()) {
+		if(setFirstMonster) {
+			return monster;
+		}
+		else if(random.nextBoolean()) {
 			return player;
 		}
 		else {
@@ -43,13 +46,9 @@ public class Combat {
 		}
 	}
 	
-	
-	
-	public GameCharacter getWinner() {
-		
-		
-		do {
-			
-		}while(true);
+	public void setFirstAttacker() {
+		setFirstMonster=true;
 	}
+	
+
 }
