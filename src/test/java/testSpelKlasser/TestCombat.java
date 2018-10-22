@@ -32,6 +32,7 @@ class TestCombat {
 		monster = new MonsterCharacter(Difficulty.EASY, "monster");
 		c = new Combat(player, monster);
 		c.setFirstAttacker();
+		testFirstToAttackMonster(monster);
 		
 	}
 	
