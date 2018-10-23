@@ -35,6 +35,15 @@ class TestCombat {
 		GameCharacter[] expected = {player, monster};
 		assertArrayEquals(expected, c.setAttackOrder());
 	}
+	@Test
+	void testSetFirstAttacker() {
+		player = new PlayerCharacter("player");
+		monster = new MonsterCharacter(Difficulty.EASY, "monster");
+		c = new Combat(player, monster);
+		c.setFirstAttacker();
+		GameCharacter[] expected = {monster, player};
+		assertArrayEquals(expected, c.setAttackOrder());
+	}
 	
 	@Test
 	void testCase3() {
@@ -46,7 +55,7 @@ class TestCombat {
 		monster.setAttackDamage(1);
 		c.setAttackOrder();
 		c.startCombat();
-		assertSame(monster, c.winner);
+		assertSame(monster, c.getWinner());
 	}
 	
 	

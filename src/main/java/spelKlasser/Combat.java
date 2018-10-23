@@ -7,7 +7,7 @@ public class Combat {
 	private MonsterCharacter monster;
 	private boolean setFirstMonster;
 	private GameCharacter[] attackOrder;
-	public GameCharacter winner;
+	private GameCharacter winner;
 	
 	
 	public Combat(PlayerCharacter player, MonsterCharacter monster) {
@@ -71,6 +71,9 @@ public class Combat {
 		
 	}
 	
+	public GameCharacter getWinner() {
+		return winner;
+	}
 
 
 }
