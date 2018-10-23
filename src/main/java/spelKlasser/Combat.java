@@ -50,5 +50,10 @@ public class Combat {
 		setFirstMonster=true;
 	}
 	
+	public void startCombat() {
+		GameCharacter firstAttacker = firstToAttack();
+		
+	}
+	
 
 }
