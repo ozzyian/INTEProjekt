@@ -1,8 +1,13 @@
 package testSpelKlasser;
 import spelKlasser.*;
 import static org.junit.jupiter.api.Assertions.*;
-
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+
+
 
 class TestCombat {
 	MonsterCharacter monster;
@@ -11,20 +16,21 @@ class TestCombat {
 	
 	@Test
 	void testPlayerNull() {
+		c = new Combat(new PlayerCharacter("testP"), new MonsterCharacter(Difficulty.EASY,"testM"));
 		assertNotNull(c.getPlayer());
 	}
 	@Test
 	void testMonsterNull() {
+		c = new Combat(new PlayerCharacter("testP"), new MonsterCharacter(Difficulty.EASY,"testM"));
 		assertNotNull(c.getMonster());
 	}
 	@Test
-	void testFirstToAttackPlayer(PlayerCharacter p) {
-		assertSame(p, c.firstToAttack());
+	void testFirstToAttackPlayer() {
+		assertSame(player, c.firstToAttack());
 	}
-	
 	@Test
-	void testFirstToAttackMonster(MonsterCharacter m) {
-		assertSame(m, c.firstToAttack());
+	void testFirstToAttackMonster() {
+		assertSame(monster, c.firstToAttack());
 	}
 	@Test
 	void testCase3() {
@@ -32,7 +38,7 @@ class TestCombat {
 		monster = new MonsterCharacter(Difficulty.EASY, "monster");
 		c = new Combat(player, monster);
 		c.setFirstAttacker();
-		testFirstToAttackMonster(monster);
+		player.setHealth(2);
 		
 	}
 	
