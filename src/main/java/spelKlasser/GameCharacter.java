@@ -44,6 +44,9 @@ abstract class GameCharacter {
 	public void setAttackDamage(int damage) {
 		attackDamage = damage;
 	}
+	public int getAttackDamage() {
+		return attackDamage;
+	}
 	
 	abstract int getMaxHealth();
 	 		

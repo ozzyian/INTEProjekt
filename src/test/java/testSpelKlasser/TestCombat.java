@@ -40,7 +40,7 @@ class TestCombat {
 		c.setFirstAttacker();
 		player.setBaseHealth(2);
 		monster.setAttackDamage(1);
-		
+		c.startCombat();
 		
 	}
 	
