@@ -38,7 +38,9 @@ class TestCombat {
 		monster = new MonsterCharacter(Difficulty.EASY, "monster");
 		c = new Combat(player, monster);
 		c.setFirstAttacker();
-		player.setHealth(2);
+		player.setBaseHealth(2);
+		monster.setAttackDamage(1);
+		
 		
 	}
 	

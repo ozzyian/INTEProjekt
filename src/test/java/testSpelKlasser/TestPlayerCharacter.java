@@ -12,6 +12,16 @@ class TestPlayerCharacter {
 		assertEquals(0, pc.getArmor());
 	}
 	
+	@Test
+	void testSetBaseHealth() {
+		pc.setBaseHealth(2);
+		assertEquals(2,pc.getBaseHealth());
+	}
+	@Test void testSetAttackDamage() {
+		pc.setAttackDamage(2);
+		assertEquals(2, pc.getAttackDamage());
+	}
+	
 	void testGetDamage() {
 		assertEquals(20, pc.getDamage());
 	}

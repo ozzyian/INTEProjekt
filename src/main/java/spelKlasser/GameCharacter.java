@@ -2,7 +2,7 @@ package spelKlasser;
 
 abstract class GameCharacter {
 
-	private int velocity, baseHealth, strength, agility; 
+	private int velocity, baseHealth, strength, agility, attackDamage; 
 	private String name; 
 	
 	
@@ -11,8 +11,9 @@ abstract class GameCharacter {
 		baseHealth = 100;  
 		strength = 0;
 		agility = 0;
+		attackDamage = 0;
 		this.name = name;
-		;
+		
 	}
 	
 	public int getVelocity() { 
@@ -36,6 +37,12 @@ abstract class GameCharacter {
 	}
 	public void increaseAgility() {
 		agility=+1;
+	}
+	public void setBaseHealth(int health) {
+		baseHealth = health;
+	}
+	public void setAttackDamage(int damage) {
+		attackDamage = damage;
 	}
 	
 	abstract int getMaxHealth();
