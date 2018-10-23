@@ -47,7 +47,9 @@ public abstract class GameCharacter {
 	public int getAttackDamage() {
 		return attackDamage;
 	}
-
+	public void damageTaken(GameCharacter attacker) {
+		baseHealth =- attacker.getAttackDamage();
+	}
 	
 	abstract int getMaxHealth();
 	 		

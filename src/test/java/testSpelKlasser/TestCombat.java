@@ -1,11 +1,13 @@
 package testSpelKlasser;
 import spelKlasser.*;
+
+
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
+
+
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
+
+
 
 
 
@@ -45,8 +47,7 @@ class TestCombat {
 		c.setFirstAttacker();
 		player.setBaseHealth(2);
 		monster.setAttackDamage(1);
-		c.startCombat();
-		
+		assertSame(monster, c.getWinner());
 	}
 	
 	
