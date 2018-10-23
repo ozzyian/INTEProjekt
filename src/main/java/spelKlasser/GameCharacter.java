@@ -47,6 +47,7 @@ public abstract class GameCharacter {
 	public int getAttackDamage() {
 		return attackDamage;
 	}
+
 	
 	abstract int getMaxHealth();
 	 		

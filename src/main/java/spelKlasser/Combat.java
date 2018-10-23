@@ -53,6 +53,7 @@ public class Combat {
 	}
 	
 	public void startCombat() {
+		attackOrder[1].damageTaken(attackOrder[0]);
 		
 		
 	}

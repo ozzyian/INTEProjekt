@@ -1,6 +1,9 @@
 package testSpelKlasser;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import spelKlasser.Difficulty;
+import spelKlasser.MonsterCharacter;
 import spelKlasser.PlayerCharacter;
 import org.junit.jupiter.api.Test;
 
@@ -17,9 +20,17 @@ class TestPlayerCharacter {
 		pc.setBaseHealth(2);
 		assertEquals(2,pc.getBaseHealth());
 	}
-	@Test void testSetAttackDamage() {
+	@Test 
+	void testSetAttackDamage() {
 		pc.setAttackDamage(2);
 		assertEquals(2, pc.getAttackDamage());
+	}
+	@Test
+	void testDamageTaken() {
+		MonsterCharacter monster = new MonsterCharacter(Difficulty.EASY, "monster");
+		monster.setAttackDamage(1);
+		pc.damageTaken(monster);
+		assertEquals(1, pc.getBaseHealth());
 	}
 	
 	void testGetDamage() {
