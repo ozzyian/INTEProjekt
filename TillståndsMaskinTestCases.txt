@@ -1,0 +1,9 @@
+testfall 1
+
+testfall 3
+1.skapa combat objekt med player+monster x
+2.checks agility, p.agi=m.agi x
+6.randoms monster, monster attacks 
+8.calcs hp diff for player, player attacks
+7.calcs hp diff for monster, monster attacks
+9.calcs player hp to <=0;
