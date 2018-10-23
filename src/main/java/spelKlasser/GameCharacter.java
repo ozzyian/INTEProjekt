@@ -1,6 +1,6 @@
 package spelKlasser;
 
-abstract class GameCharacter {
+public abstract class GameCharacter {
 
 	private int velocity, baseHealth, strength, agility, attackDamage; 
 	private String name; 

@@ -25,8 +25,13 @@ class TestCombat {
 		assertNotNull(c.getMonster());
 	}
 	@Test
-	void testFirstToAttackPlayer() {
-		assertSame(player, c.firstToAttack());
+	void testAttackOrder() {
+		player = new PlayerCharacter("player");
+		monster = new MonsterCharacter(Difficulty.EASY, "monster");
+		player.increaseAgility();
+		c = new Combat(player,monster);
+		GameCharacter[] expected = {player, monster};
+		assertArrayEquals(expected, c.firstToAttack());
 	}
 	@Test
 	void testFirstToAttackMonster() {
