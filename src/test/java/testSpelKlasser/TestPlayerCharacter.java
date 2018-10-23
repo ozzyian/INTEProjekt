@@ -49,4 +49,10 @@ class TestPlayerCharacter {
 		assertEquals(0, pc.getAgility()); 
 	}
 	
+	@Test
+	void testGetBaseHealth() {
+		pc.setBaseHealth(2);
+		assertEquals(2, pc.getBaseHealth());
+	}
+	
 }

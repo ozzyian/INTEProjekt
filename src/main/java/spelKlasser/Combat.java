@@ -7,7 +7,7 @@ public class Combat {
 	private MonsterCharacter monster;
 	private boolean setFirstMonster;
 	private GameCharacter[] attackOrder;
-	private GameCharacter winner;
+	public GameCharacter winner;
 	
 	
 	public Combat(PlayerCharacter player, MonsterCharacter monster) {
@@ -23,7 +23,7 @@ public class Combat {
 		return monster;
 	}
 	
-	public GameCharacter[] firstToAttack() {
+	public GameCharacter[] setAttackOrder() {
 		
 		if (player.getAgility()>monster.getAgility()) {
 			return attackOrder = new GameCharacter[] {player, monster};
@@ -53,23 +53,24 @@ public class Combat {
 		setFirstMonster=true;
 	}
 	
-	public GameCharacter getWinner() {
-		while(attackOrder[1].getBaseHealth()>0 || attackOrder[0].getBaseHealth()>0) {
+	public void startCombat() {
+		while(attackOrder[0].getBaseHealth()>0) {
 			attackOrder[1].damageTaken(attackOrder[0]);
+			if(attackOrder[1].getBaseHealth()<=0)
+				break;
 			attackOrder[0].damageTaken(attackOrder[1]);
 		}
 		if (attackOrder[0].getBaseHealth()<=0) {
-			return attackOrder[1];
+			winner = attackOrder[1];
 		}
 		else {
-			return attackOrder[0];
+			winner = attackOrder[0];
 		}
-		
 		
 		
 		
 	}
 	
-	
+
 
 }
