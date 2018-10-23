@@ -6,6 +6,7 @@ public class Combat {
 	private PlayerCharacter player;
 	private MonsterCharacter monster;
 	private boolean setFirstMonster;
+	private GameCharacter[] attackOrder;
 	
 	
 	public Combat(PlayerCharacter player, MonsterCharacter monster) {
@@ -21,28 +22,29 @@ public class Combat {
 		return monster;
 	}
 	
-	public GameCharacter firstToAttack() {
+	public GameCharacter[] firstToAttack() {
+		
 		if (player.getAgility()>monster.getAgility()) {
-			return player;
+			return attackOrder = new GameCharacter[] {player, monster};
 		}
 		else if(monster.getAgility()> player.getAgility()) {
-			return monster;
+			return attackOrder = new GameCharacter[] {monster, player};
 		}
 		else {
 			return randomFirstAttack();
 		}
 
 	}
-	private GameCharacter randomFirstAttack() {
+	private GameCharacter[] randomFirstAttack() {
 		Random random = new Random();
 		if(setFirstMonster) {
-			return monster;
+			return attackOrder = new GameCharacter[] {monster, player};
 		}
 		else if(random.nextBoolean()) {
-			return player;
+			return attackOrder = new GameCharacter[] {player, monster};
 		}
 		else {
-			return monster;
+			return attackOrder = new GameCharacter[] {monster, player};
 		}
 	}
 	
@@ -51,7 +53,7 @@ public class Combat {
 	}
 	
 	public void startCombat() {
-		GameCharacter firstAttacker = firstToAttack();
+		
 		
 	}
 	
