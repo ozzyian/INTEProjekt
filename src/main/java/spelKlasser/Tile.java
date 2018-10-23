@@ -11,14 +11,9 @@ public enum Tile {
 	private Color color;
 	
 	Tile(char glyph, Color color){
-		this.glyph = '.';
-		this.color = Color.black;
+		this.glyph = glyph;
+		this.color = color;
 	}
-	
-	Tile(){
-		this.glyph = '.';
-		this.color = Color.black;
-		}
 	
 	public char getGlyph() {return glyph;}
 	public Color getColor() {return color;}
