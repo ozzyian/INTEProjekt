@@ -54,6 +54,7 @@ class TestCombat {
 	
 	@Test 
 	void testCase1() {
+		
 		player = new PlayerCharacter("player"); 
 		monster = new MonsterCharacter(Difficulty.EASY, "monster"); 
 		c = new Combat(player, monster); 
