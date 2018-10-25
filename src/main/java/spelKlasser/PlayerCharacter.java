@@ -39,5 +39,7 @@ public class PlayerCharacter extends GameCharacter {
 		fearlessActivated = activate;
 	}
 	
-	public void 
+	public void gainFearlessModifier() {
+		setAttackDamage(getAttackDamage() + 10);
+	}
 }

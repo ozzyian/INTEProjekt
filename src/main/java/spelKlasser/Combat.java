@@ -8,6 +8,8 @@ public class Combat {
 	//private GameCharacter firstAttacker;
 	private GameCharacter[] attackOrder;
 	private GameCharacter winner;
+	private boolean healthCheckFearlessSecondAttacker = attackOrder[1].getBaseHealth()<10 && attackOrder[1].getBaseHealth()>0 && attackOrder[1] instanceof PlayerCharacter; 
+	private boolean healthCheckFearlessFirstAttacker = attackOrder[0].getBaseHealth()<10 && attackOrder[0].getBaseHealth()>0 && attackOrder[0] instanceof PlayerCharacter;
 	
 	
 	public Combat(PlayerCharacter player, MonsterCharacter monster) {
@@ -61,24 +63,11 @@ public class Combat {
 			
 			attackOrder[1].damageTaken(attackOrder[0]);
 			
-			if(attackOrder[1].getBaseHealth()<10 && attackOrder[1].getBaseHealth()>0 && attackOrder[1] instanceof PlayerCharacter) {
-				if(fearless = true)
-					if(activated)
-						setfearlessmodifier(); 
-				
-			}
 			if(attackOrder[1].getBaseHealth()<=0) {
 				break;
 			}
 			
-			attackOrder[0].damageTaken(attackOrder[1]);
-			
-			if(attackOrder[0].getBaseHealth()<10 && attackOrder[0].getBaseHealth()>0 && attackOrder[0] instanceof PlayerCharacter) {
-				if(fearless = true)
-					if(activated)
-						setfearlessmodifier();
-			}
-			
+			attackOrder[0].damageTaken(attackOrder[1]);			
 		}
 		
 		if (attackOrder[0].getBaseHealth()<=0) {
@@ -101,25 +90,31 @@ public class Combat {
 	}
 
 	public boolean checkHealthForFearless() {
-		if(attackOrder[1].getBaseHealth()<10 && attackOrder[1].getBaseHealth()>0 && attackOrder[1] instanceof PlayerCharacter) {
+		if(healthCheckFearlessSecondAttacker) {
 			PlayerCharacter player = (PlayerCharacter) attackOrder[1];
 			if(player.getFearlessBuff()) {
 				if(player.getFearlessStatus()) {
+					return true;
+				}
+				
+			}
 					
+		}else if(healthCheckFearlessFirstAttacker) {
+			PlayerCharacter player = (PlayerCharacter) attackOrder[0];
+			if(player.getFearlessBuff()) {
+				if(player.getFearlessStatus()) {
+					return true;
 				}
 				
 				
-			}else {
-				return false;
 			}
-			
-				
-			
 		}else {
-			return false;
+			return false; 
 		}
 		 
 	}
+	
+	
 
 
 }
