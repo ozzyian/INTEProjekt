@@ -1,14 +1,8 @@
 package testSpelKlasser;
+
 import spelKlasser.*;
-
-
 import static org.junit.jupiter.api.Assertions.*;
-
-
 import org.junit.jupiter.api.Test;
-
-
-
 
 
 class TestCombat {
@@ -40,9 +34,18 @@ class TestCombat {
 		player = new PlayerCharacter("player");
 		monster = new MonsterCharacter(Difficulty.EASY, "monster");
 		c = new Combat(player, monster);
-		c.setFirstAttacker();
+		c.setFirstAttacker(monster);
 		GameCharacter[] expected = {monster, player};
 		assertArrayEquals(expected, c.setAttackOrder());
+	}
+	
+	@Test
+	void testCase1() {
+		player = new PlayerCharacter("player");
+		monster = new MonsterCharacter(Difficulty.EASY,"monster");
+		c = new Combat(player,monster);
+		c.setFirstAttacker(player);
+		c.setAttackOrder();
 	}
 	
 	@Test
