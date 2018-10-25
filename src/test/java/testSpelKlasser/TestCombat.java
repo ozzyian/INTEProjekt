@@ -44,6 +44,7 @@ class TestCombat {
 	
 	@Test 
 	void testCheckFearlessActivation() {
+		
 		player = new PlayerCharacter("player"); 
 		monster = new MonsterCharacter(Difficulty.EASY, "monster"); 
 		c = new Combat(player, monster);
