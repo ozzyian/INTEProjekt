@@ -55,4 +55,27 @@ class TestPlayerCharacter {
 		assertEquals(2, pc.getBaseHealth());
 	}
 	
+	@Test 
+	void testFearlessBuff() {
+		assertFalse(pc.getFearlessBuff());
+	}
+	
+	@Test 
+	void testSetFearlessBuff() {
+		pc.setFearlessBuff(true); 
+		assertTrue(pc.getFearlessBuff()); 
+	}
+	
+	@Test 
+	void testGetFearlessStatus() { 
+		pc.setFearlessActivated(true);
+		assertTrue(pc.getFearlessStatus());
+	}
+	
+	@Test 
+	void testGainFearlessModifier() {
+		pc.gainFearlessModifier();
+		assertEquals(10, pc.getAttackDamage());
+	}
+	
 }
