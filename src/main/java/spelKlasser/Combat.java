@@ -23,16 +23,16 @@ public class Combat {
 		return monster;
 	}
 	
-	public GameCharacter[] setAttackOrder() {
+	public void setAttackOrder() {
 		
 		if (player.getAgility()>monster.getAgility()) {
-			return attackOrder = new GameCharacter[] {player, monster};
+			attackOrder = new GameCharacter[] {player, monster};
 		}
 		else if(monster.getAgility()> player.getAgility()) {
-			return attackOrder = new GameCharacter[] {monster, player};
+			attackOrder = new GameCharacter[] {monster, player};
 		}
 		else {
-			return randomFirstAttack();
+			attackOrder = randomFirstAttack();
 		}
 
 	}
@@ -76,6 +76,10 @@ public class Combat {
 	
 	public GameCharacter getWinner() {
 		return winner;
+	}
+	
+	public GameCharacter[] getAttackOrder() {
+		return attackOrder;
 	}
 
 

@@ -57,7 +57,13 @@ class TestPlayerCharacter {
 	
 	@Test 
 	void testFearlessBuff() {
-		assertFalse(pc.fearlessBuff);
+		assertFalse(pc.getFearlessBuff());
+	}
+	
+	@Test 
+	void testSetFearlessBuff() {
+		pc.setFearlessBuff(true); 
+		assertTrue(pc.getFearlessBuff()); 
 	}
 	
 }
