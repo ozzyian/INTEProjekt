@@ -100,6 +100,26 @@ public class Combat {
 		return attackOrder;
 	}
 
+	public boolean checkHealthForFearless() {
+		if(attackOrder[1].getBaseHealth()<10 && attackOrder[1].getBaseHealth()>0 && attackOrder[1] instanceof PlayerCharacter) {
+			PlayerCharacter player = (PlayerCharacter) attackOrder[1];
+			if(player.getFearlessBuff()) {
+				if(player.getFearlessStatus()) {
+					
+				}
+				
+				
+			}else {
+				return false;
+			}
+			
+				
+			
+		}else {
+			return false;
+		}
+		 
+	}
 
 
 }
