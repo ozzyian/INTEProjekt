@@ -5,7 +5,7 @@ import java.util.Random;
 public class Combat {
 	private PlayerCharacter player;
 	private MonsterCharacter monster;
-	private boolean setFirstMonster;
+	//private GameCharacter firstAttacker;
 	private GameCharacter[] attackOrder;
 	private GameCharacter winner;
 	
@@ -38,10 +38,8 @@ public class Combat {
 	}
 	private GameCharacter[] randomFirstAttack() {
 		Random random = new Random();
-		if(setFirstMonster) {
-			return attackOrder = new GameCharacter[] {monster, player};
-		}
-		else if(random.nextBoolean()) {
+
+		if(random.nextBoolean()) {
 			return attackOrder = new GameCharacter[] {player, monster};
 		}
 		else {
@@ -49,8 +47,13 @@ public class Combat {
 		}
 	}
 	
-	public void setFirstAttacker() {
-		setFirstMonster=true;
+	public void setFirstAttacker(GameCharacter firstAttacker) {
+		if(firstAttacker instanceof PlayerCharacter) {
+			attackOrder = new GameCharacter[] {player, monster};
+		}
+		else  {
+			attackOrder = new GameCharacter[] {monster, player};
+		}
 	}
 	
 	public void startCombat() {
