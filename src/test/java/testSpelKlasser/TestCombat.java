@@ -34,7 +34,6 @@ class TestCombat {
 		player = new PlayerCharacter("player");
 		monster = new MonsterCharacter(Difficulty.EASY, "monster");
 		c = new Combat(player, monster);
-		//c.setAttackOrder();
 		c.setFirstAttacker(monster);
 		GameCharacter[] expected = {monster, player};
 		assertArrayEquals(expected, c.setAttackOrder());
