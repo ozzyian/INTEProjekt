@@ -7,8 +7,8 @@ public class Combat {
 	private MonsterCharacter monster;
 	private GameCharacter[] attackOrder;
 	private GameCharacter winner;
-	private boolean healthCheckFearlessSecondAttacker = attackOrder[1].getBaseHealth()<10 && attackOrder[1].getBaseHealth()>0 && attackOrder[1] instanceof PlayerCharacter; 
-	private boolean healthCheckFearlessFirstAttacker = attackOrder[0].getBaseHealth()<10 && attackOrder[0].getBaseHealth()>0 && attackOrder[0] instanceof PlayerCharacter;
+//	private boolean healthCheckFearlessSecondAttacker = attackOrder[1].getBaseHealth()<10 && attackOrder[1].getBaseHealth()>0 && attackOrder[1] instanceof PlayerCharacter; 
+//	private boolean healthCheckFearlessFirstAttacker = attackOrder[0].getBaseHealth()<10 && attackOrder[0].getBaseHealth()>0 && attackOrder[0] instanceof PlayerCharacter;
 	
 	
 	public Combat(PlayerCharacter player, MonsterCharacter monster) {
@@ -61,34 +61,34 @@ public class Combat {
 		while(attackOrder[0].getBaseHealth()>0) {
 			
 			attackOrder[1].damageTaken(attackOrder[0]);
-//			if(healthCheckFearlessSecondAttacker) {
-//				PlayerCharacter playerTwo = (PlayerCharacter) attackOrder[1];
-//				if(playerTwo.getFearlessBuff()) {
-//					if(!playerTwo.getFearlessStatus()) {
-//						playerTwo.setFearlessActivated(true);
-//						playerTwo.gainFearlessModifier();
-//					}
-//				}else {
-//					break;
-//				}
-//			}
+			if(attackOrder[1].getBaseHealth()<10 && attackOrder[1].getBaseHealth()>0 && attackOrder[1] instanceof PlayerCharacter) {
+				PlayerCharacter playerTwo = (PlayerCharacter) attackOrder[1];
+				if(playerTwo.getFearlessBuff()) {
+					if(!playerTwo.getFearlessStatus()) {
+						playerTwo.setFearlessActivated(true);
+						playerTwo.gainFearlessModifier();
+					}
+				}else {
+					break;
+				}
+			}
 			
 			if(attackOrder[1].getBaseHealth()<=0) {
 				break;
 			}
 			
 			attackOrder[0].damageTaken(attackOrder[1]);
-//			if(healthCheckFearlessFirstAttacker) {
-//				PlayerCharacter playerOne = (PlayerCharacter) attackOrder[1];
-//				if(playerOne.getFearlessBuff()) {
-//					if(!playerOne.getFearlessStatus()) {
-//						playerOne.setFearlessActivated(true);
-//						playerOne.gainFearlessModifier();
-//					}
-//				}else {
-//					break;
-//				}
-//			}
+			if(attackOrder[0].getBaseHealth()<10 && attackOrder[0].getBaseHealth()>0 && attackOrder[0] instanceof PlayerCharacter) {
+				PlayerCharacter playerOne = (PlayerCharacter) attackOrder[1];
+				if(playerOne.getFearlessBuff()) {
+					if(!playerOne.getFearlessStatus()) {
+						playerOne.setFearlessActivated(true);
+						playerOne.gainFearlessModifier();
+					}
+				}else {
+					break;
+				}
+			}
 		}
 		
 		if (attackOrder[0].getBaseHealth()<=0) {
