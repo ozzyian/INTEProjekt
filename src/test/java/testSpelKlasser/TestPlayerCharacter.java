@@ -55,4 +55,9 @@ class TestPlayerCharacter {
 		assertEquals(2, pc.getBaseHealth());
 	}
 	
+	@Test 
+	void testFearlessBuff() {
+		assertFalse(pc.fearlessBuff);
+	}
+	
 }

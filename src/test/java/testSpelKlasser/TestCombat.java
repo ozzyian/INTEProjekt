@@ -34,10 +34,22 @@ class TestCombat {
 		player = new PlayerCharacter("player");
 		monster = new MonsterCharacter(Difficulty.EASY, "monster");
 		c = new Combat(player, monster);
-		//c.setAttackOrder();
 		c.setFirstAttacker(monster);
 		GameCharacter[] expected = {monster, player};
 		assertArrayEquals(expected, c.setAttackOrder());
+	}
+	
+	@Test 
+	void testCase1() {
+		player = new PlayerCharacter("player"); 
+		monster = new MonsterCharacter(Difficulty.EASY, "monster"); 
+		c = new Combat(player, monster); 
+		player.increaseAgility(); 
+		player.setBaseHealth(10);
+		monster.setAttackDamage(3);
+		c.setAttackOrder(); 
+		c.startCombat();
+		
 	}
 	
 	@Test
