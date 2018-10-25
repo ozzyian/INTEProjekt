@@ -7,6 +7,8 @@ public class Combat {
 	private MonsterCharacter monster;
 	private GameCharacter[] attackOrder;
 	private GameCharacter winner;
+	//private boolean healthCheckFearlessSecondAttacker = attackOrder[1].getBaseHealth()<10 && attackOrder[1].getBaseHealth()>0 && attackOrder[1] instanceof PlayerCharacter; 
+	//private boolean healthCheckFearlessFirstAttacker = attackOrder[0].getBaseHealth()<10 && attackOrder[0].getBaseHealth()>0 && attackOrder[0] instanceof PlayerCharacter;
 
 	
 	
@@ -96,8 +98,6 @@ public class Combat {
 		else {
 			winner = attackOrder[0];
 		}
-		
-		
 		
 	}
 	
