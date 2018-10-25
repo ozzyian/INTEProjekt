@@ -58,11 +58,29 @@ public class Combat {
 	
 	public void startCombat() {
 		while(attackOrder[0].getBaseHealth()>0) {
+			
 			attackOrder[1].damageTaken(attackOrder[0]);
-			if(attackOrder[1].getBaseHealth()<=0)
+			
+			if(attackOrder[1].getBaseHealth()<10 && attackOrder[1].getBaseHealth()>0 && attackOrder[1] instanceof PlayerCharacter) {
+				if(fearless = true)
+					if(activated)
+						setfearlessmodifier(); 
+				
+			}
+			if(attackOrder[1].getBaseHealth()<=0) {
 				break;
+			}
+			
 			attackOrder[0].damageTaken(attackOrder[1]);
+			
+			if(attackOrder[0].getBaseHealth()<10 && attackOrder[0].getBaseHealth()>0 && attackOrder[0] instanceof PlayerCharacter) {
+				if(fearless = true)
+					if(activated)
+						setfearlessmodifier();
+			}
+			
 		}
+		
 		if (attackOrder[0].getBaseHealth()<=0) {
 			winner = attackOrder[1];
 		}
@@ -81,6 +99,7 @@ public class Combat {
 	public GameCharacter[] getAttackOrder() {
 		return attackOrder;
 	}
+
 
 
 }

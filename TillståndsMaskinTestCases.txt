@@ -7,6 +7,7 @@ testfall 1
 12. 0<p.hp<10
 14.fearless buff present
 16.fearless already activated, player attacks
+10. m.hp<=0
 
 testfall 2
 1.initiate combat objekt with player+monster
@@ -48,5 +49,5 @@ testfall 5
 Monster
 walk (); error
 
-flygandemonster går över vatten och mark stenblock
+flygandemonster gï¿½r ï¿½ver vatten och mark stenblock
 walk(); 

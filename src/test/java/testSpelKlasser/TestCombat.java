@@ -40,6 +40,15 @@ class TestCombat {
 		assertArrayEquals(expected, c.getAttackOrder());
 	}
 	
+	@Test
+	void testCheckHealthForFearless() {
+		player = new PlayerCharacter("player"); 
+		monster = new MonsterCharacter(Difficulty.EASY, "monster"); 
+		c = new Combat(player, monster);
+		player.setBaseHealth(7);
+		assertTrue(c.checkHealthForFearless());
+	}
+	
 	@Test 
 	void testCase1() {
 		player = new PlayerCharacter("player"); 
@@ -50,6 +59,7 @@ class TestCombat {
 		monster.setAttackDamage(3);
 		c.setAttackOrder(); 
 		c.startCombat();
+		assertEquals(player, c.getWinner());
 		
 	}
 	
