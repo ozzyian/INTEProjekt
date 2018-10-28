@@ -59,6 +59,7 @@ public class Combat {
 	}
 	
 	public void startCombat() {
+		
 		while(attackOrder[0].getBaseHealth()>0) {
 			
 			attackOrder[1].damageTaken(attackOrder[0]);
@@ -70,23 +71,26 @@ public class Combat {
 						playerTwo.gainFearlessModifier();
 					}
 				}else {
+					winner = attackOrder[0];
 					break;
 				}
 			}
 			
 			if(attackOrder[1].getBaseHealth()<=0) {
+				winner = attackOrder[0];
 				break;
 			}
 			
 			attackOrder[0].damageTaken(attackOrder[1]);
 			if(attackOrder[0].getBaseHealth()<10 && attackOrder[0].getBaseHealth()>0 && attackOrder[0] instanceof PlayerCharacter) {
-				PlayerCharacter playerOne = (PlayerCharacter) attackOrder[1];
+				PlayerCharacter playerOne = (PlayerCharacter) attackOrder[0];
 				if(playerOne.getFearlessBuff()) {
 					if(!playerOne.getFearlessStatus()) {
 						playerOne.setFearlessActivated(true);
 						playerOne.gainFearlessModifier();
 					}
 				}else {
+					winner = attackOrder[1];
 					break;
 				}
 			}
