@@ -44,13 +44,13 @@ public abstract class GameCharacter {
 		baseHealth = health;
 	}
 	public void setAttackDamage(int damage) {
-		attackDamage = damage;
+		this.attackDamage = damage;
 	}
 	public int getAttackDamage() {
 		return attackDamage;
 	}
 	public void damageTaken(GameCharacter attacker) {
-		baseHealth =- attacker.getAttackDamage();
+		baseHealth = baseHealth - attacker.getAttackDamage();
 	}
 	
 	public double getDamageReduction() {

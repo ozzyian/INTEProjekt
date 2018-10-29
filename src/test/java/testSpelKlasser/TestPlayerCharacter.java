@@ -32,7 +32,7 @@ class TestPlayerCharacter {
 		MonsterCharacter monster = new MonsterCharacter(Difficulty.EASY, "monster");
 		monster.setAttackDamage(1);
 		pc.damageTaken(monster);
-		assertEquals(-1, pc.getBaseHealth());
+		assertEquals(99, pc.getBaseHealth());
 	}
 	
 	void testGetDamage() {
