@@ -1,10 +1,13 @@
 package spelKlasser;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class PlayerCharacter extends GameCharacter {
 	
 	private int experience, level;
 	private boolean fearlessBuff, fearlessActivated;
-	private boolean[] outfit = new boolean[4];
+	private Map<ItemType,Item> outfit = new HashMap<ItemType, Item>();
 	
 	public PlayerCharacter(String name) { 
 		super(name); 
@@ -44,14 +47,21 @@ public class PlayerCharacter extends GameCharacter {
 		setAttackDamage(getAttackDamage() + 10);
 	}
 	
-	public boolean[] getOutfit() {
-		return outfit;
+	public Item[] getOutfit() {
+		Item[] arrayOutfit = new Item[outfit.size()]; 
+		int i = 0;
+		for(Map.Entry<ItemType, Item> mapValue: outfit.entrySet()) {
+			Item item = mapValue.getValue(); 
+			arrayOutfit[i] = item;
+			i++;
+		}
+		
+		return arrayOutfit;
+	}
+	public void setOutfit() {
+	
 	}
 	
-	public void setOutfit(boolean[] outfit) {
-		this.outfit = outfit;
-		setVelocityModifier(1.25);
-	}
 	
 
 }
