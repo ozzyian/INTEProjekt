@@ -64,6 +64,35 @@ public class PlayerCharacter extends GameCharacter {
 			outfit.put(item.getItemType(), item);
 		}
 	}
+
+	
+	public void calculateValues() {
+		double totalDamageReduction=0;
+		double totalVelocityModifier=0;
+		
+		for(Map.Entry<ItemType, Item> i : outfit.entrySet()) {
+			Item item = i.getValue();
+			switch(item.getItemType()) {
+			case CHEST: 
+				totalDamageReduction += 0.50;
+				break;
+			case LEG: 
+				totalDamageReduction += 0.70;
+				break;
+			case GLOVES: 
+				totalDamageReduction += 0.80;
+				break;
+			case BOOTS: 
+				totalVelocityModifier = 1.25;
+				break;
+				
+			}
+		}
+		
+		
+		
+		
+	}
 	
 	
 

@@ -112,7 +112,7 @@ class TestPlayerCharacter {
 		Item[] outfit = {new Item(ItemType.BOOTS)};
 		pc.setOutfit(outfit);
 		pc.calculateValues();
-		double[] actual = {pc.getDamageReduction(), pc.getVelocityModifier()};
+		double[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
 		assertArrayEquals(expected, actual);
 		
 	}

@@ -3,7 +3,7 @@ package spelKlasser;
 public abstract class GameCharacter {
 
 	private int velocity, baseHealth, strength, agility, attackDamage; 
-	private double damageReduction, velocityModifier;
+	private double totalDamageReduction, totalVelocityModifier;
 	private String name;
 	
 	public GameCharacter(String name) { 
@@ -12,8 +12,8 @@ public abstract class GameCharacter {
 		strength = 0;
 		agility = 0;
 		attackDamage = 0;
-		damageReduction = 0;
-		velocityModifier = 0; 
+		totalDamageReduction = 0;
+		totalVelocityModifier = 0; 
 		this.name = name;
 		
 	}
@@ -53,12 +53,12 @@ public abstract class GameCharacter {
 		baseHealth = baseHealth - attacker.getAttackDamage();
 	}
 	
-	public double getDamageReduction() {
-		return damageReduction;
+	public double getTotalDamageReduction() {
+		return totalDamageReduction;
 	}
 	
-	public double getVelocityModifier() {
-		return velocityModifier;
+	public double getTotalVelocityModifier() {
+		return totalVelocityModifier;
 	}
 	
 	public void setVelocityModifier(double modifier) { 
