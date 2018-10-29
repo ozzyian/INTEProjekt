@@ -60,28 +60,35 @@ public class Combat {
 	}
 	
 	public void startCombat() {
-		PlayerCharacter tempPlayer; 
+
 		GameCharacter temp;
 		reciever = attackOrder[1];
 		attacker = attackOrder[0];
-		while(reciever.getBaseHealth()>0) {
+		
+		while(true) {
 			reciever.damageTaken(attacker);
+			if (reciever.getBaseHealth()<=0) {
+				break;
+			}
+			if (reciever instanceof PlayerCharacter && reciever.getBaseHealth()<10 && reciever.getBaseHealth()<0){
+
+				if(player.getFearlessBuff()) {
+					if(!player.getFearlessStatus()) {
+						player.gainFearlessModifier();
+					}
+				}else {
+					player.setFleeingStatus(true);
+					break;
+				}
+			}
+			
 			temp = reciever;
 			reciever = attacker;
 			attacker = temp;
-			if(reciever instanceof PlayerCharacter && reciever.getBaseHealth()<10 && reciever.getBaseHealth()>0) {
-                tempPlayer = (PlayerCharacter)reciever;
-                if(tempPlayer.getFearlessBuff() && !checkFearlessActivation()) {
-                	tempPlayer.setFearlessActivated(true);
-                	tempPlayer.gainFearlessModifier();
-                }
-                
-            }
-			
 
 			
 		}
-		if (player.getBaseHealth()<=0) {
+		if (player.getBaseHealth()<=0 || player.getFleeingStatus()) {
 			winner = monster;
 		}
 		else {

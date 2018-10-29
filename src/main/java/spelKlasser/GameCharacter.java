@@ -50,6 +50,9 @@ public abstract class GameCharacter {
 	public void damageTaken(GameCharacter attacker) {
 		baseHealth = baseHealth - attacker.getAttackDamage();
 	}
+	public boolean isDead() {
+		return baseHealth <=0;
+	}
 	
 	abstract int getMaxHealth();
 	 		

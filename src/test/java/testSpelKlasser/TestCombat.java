@@ -54,6 +54,8 @@ class TestCombat {
 		player.setBaseHealth(10);
 		monster.setBaseHealth(10);
 		monster.setAttackDamage(3);
+		player.setFearlessBuff(true);
+		player.setFearlessActivated(true);
 		c.setAttackOrder(); 
 		c.startCombat();
 		assertEquals(monster, c.getWinner());
@@ -65,14 +67,14 @@ class TestCombat {
 		c.setAttackOrder();
 		c.setFirstAttacker(player);
 		player.setAttackDamage(1);
-		monster.setBaseHealth(1);
+		monster.setBaseHealth(2);
 		c.startCombat();
 		assertSame(player, c.getWinner());
 	}
 	
 	@Test
 	void testCase3() {
-		player.setBaseHealth(2);
+		player.setBaseHealth(1);
 		monster.setAttackDamage(1);
 		c.setAttackOrder();
 		c.setFirstAttacker(monster);
@@ -82,22 +84,19 @@ class TestCombat {
 	
 	@Test
 	void testCase4() {
-		player.setBaseHealth(2);
-		player.setFearlessBuff(false);
+		player.setBaseHealth(10);
 		monster.setAttackDamage(1);
 		monster.increaseAgility();
 		c.setAttackOrder();
 		c.startCombat();
-		assertEquals(false,player.getFearlessBuff());
+		assertEquals(monster, c.getWinner());
 
 	}
 	
 
-	
-
 	@Test
     void testCase5() {
-        player.setBaseHealth(3);
+        player.setBaseHealth(2);
         player.setAttackDamage(1);
         player.setFearlessBuff(true);
         monster.setAttackDamage(1);
