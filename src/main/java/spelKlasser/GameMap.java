@@ -1,5 +1,6 @@
 package spelKlasser;
 
+
 import java.awt.Color;
 
 public class GameMap{
@@ -31,4 +32,5 @@ public class GameMap{
 	public Color color(int x, int y){
 		return tile(x, y).getColor();
 	}
+
 }

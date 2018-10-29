@@ -1,0 +1,53 @@
+testfall 1
+
+
+1.initiate combat objekt with player+monster 
+2.checks agility, p.agi>m.agi, player attacks
+7.calc hp monster, monster attacks
+12. 0<p.hp<10
+14.fearless buff present
+16.fearless already activated, player attacks
+10. m.hp<=0
+
+testfall 2
+1.initiate combat objekt with player+monster
+2.calcs p.agi=m.agi, randoms attacker
+5.player attacks,calc monster hp
+10. m.hp<=0
+
+
+testfall 3
+
+1.initiate combat objekt with player+monster x
+
+2.checks agility, p.agi=m.agi x
+
+6.randoms monster, monster attacks 
+x 
+8.calcs hp diff for player, player attacks
+
+7.calcs hp diff for monster, monster attacks
+
+9.calcs player hp to <=0;
+
+testfall 4
+1.initiate combat objekt
+3. calcs agi, m.agi>p.agi
+12 calcs 10>player.hp>0
+11.no fearless buff, player flees
+
+testfall 5
+1.initiate combat with player+monster
+3. m.agi>p.agi, monster attacks
+12.calcs 10>p.hp>0
+14.finds fearless buff
+15. fearless buff activated
+17.add modifiers to attack, player attacks
+10.m.hp<=0
+
+
+Monster
+walk (); error
+
+flygandemonster g�r �ver vatten och mark stenblock
+walk(); 
