@@ -4,6 +4,7 @@ public class PlayerCharacter extends GameCharacter {
 	
 	private int experience, level;
 	private boolean fearlessBuff, fearlessActivated;
+	private boolean[] outfit = new boolean[4];
 	
 	public PlayerCharacter(String name) { 
 		super(name); 
@@ -42,4 +43,10 @@ public class PlayerCharacter extends GameCharacter {
 	public void gainFearlessModifier() {
 		setAttackDamage(getAttackDamage() + 10);
 	}
+	
+	public boolean[] getOutfit() {
+		return outfit;
+	}
+	
+
 }
