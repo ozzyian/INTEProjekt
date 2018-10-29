@@ -89,37 +89,23 @@ class TestCombat {
 		c.setAttackOrder();
 		c.startCombat();
 		assertEquals(false,player.getFearlessBuff());
-	}
-	
-	@Test
-	void testCase5() {
-		player.setBaseHealth(2);
-		player.setAttackDamage(1);
-		player.setFearlessBuff(true);
-		monster.setAttackDamage(1);
-		monster.setBaseHealth(1);
-		monster.increaseAgility();
-		c.setAttackOrder();
-		//assertEquals(monster, c.getAttackOrder());
-		c.startCombat();
-		//assertEquals(true, c.checkFearlessActivation());
-		assertEquals(10, player.getAttackDamage());
+
 	}
 	
 
-	//@Test
+	
+
+	@Test
     void testCase5() {
-        player.setBaseHealth(2);
+        player.setBaseHealth(3);
         player.setAttackDamage(1);
         player.setFearlessBuff(true);
         monster.setAttackDamage(1);
         monster.setBaseHealth(1);
         monster.increaseAgility();
         c.setAttackOrder();
-        //assertEquals(monster, c.getAttackOrder());
         c.startCombat();
-        //assertEquals(true, c.checkFearlessActivation());
-        assertEquals(10, player.getAttackDamage());
+        assertEquals(player, c.getWinner());
     }
 	
 
