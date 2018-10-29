@@ -58,8 +58,11 @@ public class PlayerCharacter extends GameCharacter {
 		
 		return arrayOutfit;
 	}
-	public void setOutfit() {
-	
+	public void setOutfit(Item[] items) {
+		for(int i=0; i<items.length; i++) {
+			Item item = items[i];
+			outfit.put(item.getItemType(), item);
+		}
 	}
 	
 	

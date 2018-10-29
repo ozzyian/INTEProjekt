@@ -34,5 +34,9 @@ public class Item {
 		return velocityModifier;
 	}
 	
+	public ItemType getItemType() {
+		return type;
+	}
+	
 	
 }

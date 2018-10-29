@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import spelKlasser.Difficulty;
 import spelKlasser.Effect;
 import spelKlasser.Item;
+import spelKlasser.ItemType;
 import spelKlasser.MonsterCharacter;
 import spelKlasser.PlayerCharacter;
 import org.junit.jupiter.api.Test;
@@ -82,7 +83,7 @@ class TestPlayerCharacter {
 	
 	@Test
 	void testGetOutfit() {
-		Item[] expected = new Item[pc.getOutfit().length];
+		Item[] expected = new Item[0];
 		expected = pc.getOutfit();
 		assertArrayEquals(expected, pc.getOutfit());
 		
@@ -105,15 +106,16 @@ class TestPlayerCharacter {
 		assertArrayEquals(expected, actual); 
 	}
 	
-//	@Test 
-//	void testCase2() {
-//		double[] expected = {0, 1.25};
-//		boolean[] outfit = {false, false, false, true};
-//		pc.setOutfit(outfit);
-//		double[] actual = {pc.getDamageReduction(), pc.getVelocityModifier()};
-//		assertArrayEquals(expected, actual);
-//		
-//	}
+	@Test 
+	void testCase2() {
+		double[] expected = {0, 1.25};
+		Item[] outfit = {new Item(ItemType.BOOTS)};
+		pc.setOutfit(outfit);
+		pc.calculateValues();
+		double[] actual = {pc.getDamageReduction(), pc.getVelocityModifier()};
+		assertArrayEquals(expected, actual);
+		
+	}
 	
 //	@Test 
 //	void testCase3() {
