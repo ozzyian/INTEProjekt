@@ -40,6 +40,7 @@ class TestCombat {
 		GameCharacter[] expected = {monster, player};
 		assertArrayEquals(expected, c.getAttackOrder());
 	}
+
 	
 	@Test 
 	void testCheckFearlessActivation() {
@@ -55,7 +56,7 @@ class TestCombat {
 		monster.setAttackDamage(3);
 		c.setAttackOrder(); 
 		c.startCombat();
-		assertEquals(player, c.getWinner());
+		assertEquals(monster, c.getWinner());
 		
 	}
 	
@@ -80,7 +81,20 @@ class TestCombat {
 	}
 	
 
-	
+	//@Test
+    void testCase5() {
+        player.setBaseHealth(2);
+        player.setAttackDamage(1);
+        player.setFearlessBuff(true);
+        monster.setAttackDamage(1);
+        monster.setBaseHealth(1);
+        monster.increaseAgility();
+        c.setAttackOrder();
+        //assertEquals(monster, c.getAttackOrder());
+        c.startCombat();
+        //assertEquals(true, c.checkFearlessActivation());
+        assertEquals(10, player.getAttackDamage());
+    }
 	
 
 }
