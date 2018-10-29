@@ -3,6 +3,7 @@ package testSpelKlasser;
 import static org.junit.jupiter.api.Assertions.*;
 
 import spelKlasser.Difficulty;
+import spelKlasser.Item;
 import spelKlasser.MonsterCharacter;
 import spelKlasser.PlayerCharacter;
 import org.junit.jupiter.api.Test;
@@ -76,6 +77,13 @@ class TestPlayerCharacter {
 	void testGainFearlessModifier() {
 		pc.gainFearlessModifier();
 		assertEquals(10, pc.getAttackDamage());
+	}
+	
+	@Test
+	void testGetOutfit() {
+		Item[] expected = {}; 
+		assertArrayEquals(expected, pc.getOutfit());
+		
 	}
 	
 }
