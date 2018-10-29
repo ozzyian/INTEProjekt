@@ -106,8 +106,12 @@ class TestPlayerCharacter {
 	
 	@Test 
 	void testCase2() {
+		double[] expected = {0, 1.25};
 		boolean[] outfit = {false, false, false, true};
 		pc.setOutfit(outfit);
+		double[] actual = {pc.getDamageReduction(), pc.getVelocityModifier()};
+		assertArrayEquals(expected, actual);
+		
 	}
 	
 }

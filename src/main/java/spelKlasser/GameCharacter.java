@@ -61,6 +61,10 @@ public abstract class GameCharacter {
 		return velocityModifier;
 	}
 	
+	public void setVelocityModifier(double modifier) { 
+		velocityModifier = modifier;
+	}
+	
 	abstract int getMaxHealth();
 	 		
 	abstract int getArmor();

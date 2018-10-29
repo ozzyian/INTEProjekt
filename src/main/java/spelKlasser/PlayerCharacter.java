@@ -48,5 +48,10 @@ public class PlayerCharacter extends GameCharacter {
 		return outfit;
 	}
 	
+	public void setOutfit(boolean[] outfit) {
+		this.outfit = outfit;
+		setVelocityModifier(1.25);
+	}
+	
 
 }
