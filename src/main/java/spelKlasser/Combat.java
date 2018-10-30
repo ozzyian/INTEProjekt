@@ -67,7 +67,7 @@ public class Combat {
 		
 		while(true) {
 			reciever.damageTaken(attacker);
-			if (reciever.getBaseHealth()<=0) {
+			if (reciever.isDead()) {
 				break;
 			}
 			if (reciever instanceof PlayerCharacter && reciever.getBaseHealth()<10 && reciever.getBaseHealth()<0){
@@ -88,7 +88,7 @@ public class Combat {
 
 			
 		}
-		if (player.getBaseHealth()<=0 || player.getFleeingStatus()) {
+		if (player.isDead() || player.getFleeingStatus()) {
 			winner = monster;
 		}
 		else {
