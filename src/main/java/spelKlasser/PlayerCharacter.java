@@ -23,9 +23,7 @@ public class PlayerCharacter extends GameCharacter {
 		return getStrength()*3 + getBaseHealth();
 	}
 	
-	public int getDamage() {
-		return getStrength()*2; 
-	}
+
 	
 	public boolean getFearlessBuff() {
 		return fearlessBuff;

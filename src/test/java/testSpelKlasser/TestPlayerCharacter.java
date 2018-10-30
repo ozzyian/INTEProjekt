@@ -20,6 +20,14 @@ class TestPlayerCharacter {
 	}
 	
 	@Test
+	void testGetName() {
+		assertEquals("player", pc.getName());
+	}
+	@Test
+	void testGetVelocity() {
+		assertEquals(50, pc.getVelocity());
+	}
+	@Test
 	void testGetArmor() {
 		assertEquals(0, pc.getArmor());
 	}
@@ -42,18 +50,15 @@ class TestPlayerCharacter {
 		assertEquals(99, pc.getBaseHealth());
 	}
 	
-	void testGetDamage() {
-		assertEquals(20, pc.getDamage());
-	}
-	
+	@Test
 	void testGetMaxHealth() {
-		assertEquals(130, pc.getMaxHealth());
+		assertEquals(100, pc.getMaxHealth());
 	}
-
+	@Test
 	void testGetStrength() {
 		assertEquals(0, pc.getStrength()); 
 	}
-	
+	@Test
 	void testGetAgility() { 
 		assertEquals(0, pc.getAgility()); 
 	}
@@ -89,7 +94,9 @@ class TestPlayerCharacter {
 	
 	@Test
 	void testGetOutfit() {
-		Item[] expected = new Item[0];
+		
+		Item[] expected = {new Item(ItemType.BOOTS)};
+		pc.setOutfit(expected);
 		assertArrayEquals(expected, pc.getOutfit());
 		
 	}

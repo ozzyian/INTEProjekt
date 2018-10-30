@@ -14,9 +14,11 @@ public class Combat {
 	
 	
 	public Combat(PlayerCharacter player, MonsterCharacter monster) {
+		if (player.getAttackDamage() == 0 && monster.getAttackDamage() == 0) {
+			throw new IllegalArgumentException();
+		}
 		this.player = player;
 		this.monster = monster;
-		
 	}
 	
 	public PlayerCharacter getPlayer() {
@@ -70,7 +72,7 @@ public class Combat {
 			if (reciever.isDead()) {
 				break;
 			}
-			if (reciever instanceof PlayerCharacter && reciever.getBaseHealth()<10 && reciever.getBaseHealth()<0){
+			if (reciever instanceof PlayerCharacter && reciever.getBaseHealth()<10 && reciever.getBaseHealth()>0){
 
 				if(player.getFearlessBuff()) {
 					if(!player.getFearlessStatus()) {
@@ -98,6 +100,9 @@ public class Combat {
 	}
 	
 	public GameCharacter getWinner() {
+		if (winner==null) {
+			throw new NullPointerException();
+		}
 		return winner;
 	}
 	

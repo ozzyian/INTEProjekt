@@ -3,25 +3,42 @@ package testSpelKlasser;
 import spelKlasser.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.Rule;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.rules.ExpectedException;
 
 
 class TestCombat {
+	
 	MonsterCharacter monster;
 	PlayerCharacter player;
 	Combat c;
+	
 	
 	
 	@BeforeEach
 	void setUp() {
 		player = new PlayerCharacter("player");
 		monster = new MonsterCharacter(Difficulty.EASY, "monster");
+		player.setAttackDamage(1);
+		monster.setAttackDamage(1);
 		c = new Combat(player,monster);
 	}
 	@Test
+	void testCharactersNoDamage() {
+		player.setAttackDamage(0);
+		monster.setAttackDamage(0);
+		assertThrows(IllegalArgumentException.class, () -> {c = new Combat(player, monster);});
+	}
+	
+	@Test
 	void testPlayerNull() {
 		assertNotNull(c.getPlayer());
+	}
+	@Test
+	void testWinnerThrowsNull() {
+		assertThrows(NullPointerException.class, () -> {c.getWinner();});
 	}
 	@Test
 	void testMonsterNull() {
@@ -40,7 +57,7 @@ class TestCombat {
 		GameCharacter[] expected = {monster, player};
 		assertArrayEquals(expected, c.getAttackOrder());
 	}
-
+	
 	
 	@Test 
 	void testCheckFearlessActivation() {

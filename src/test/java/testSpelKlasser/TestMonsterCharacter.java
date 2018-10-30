@@ -14,13 +14,38 @@ class TestMonsterCharacter {
 		assertEquals(0, mc.getArmor());
 	}
 	
-	void testGetDamage() {
-		assertEquals(0, mc.getDamage()); 
+	@Test
+	void testGetMaxHealthEasy() {
+		assertEquals(100, mc.getMaxHealth());
+		int[] expected = {100, 0};
+		int[] actual = {mc.getMaxHealth(), mc.getArmor()};
+		assertArrayEquals(expected, actual);
+	}
+	@Test 
+	void testGetMaxHealthMedium() {
+		mc = new MonsterCharacter(Difficulty.MEDIUM, "Devil"); 
+		mc.increaseAgility();
+		int[] expected = {100, 2};
+		int[] actual = {mc.getMaxHealth(), mc.getArmor()};
+		assertArrayEquals(expected, actual);
+	}
+	@Test 
+	void testGetMaxHealthHard() {
+		mc = new MonsterCharacter(Difficulty.HARD, "Devil"); 
+		mc.increaseAgility();
+		int[] expected = {100, 3};
+		int[] actual = {mc.getMaxHealth(), mc.getArmor()};
+		assertArrayEquals(expected, actual);
+		
 	}
 	
-	void testGetMaxHealth() {
-		assertEquals(110, mc.getMaxHealth());
+	
+	@Test
+	void testgetMonsterDifficulty() {
+		mc = new MonsterCharacter(Difficulty.MEDIUM, "monster");
+		assertEquals(Difficulty.MEDIUM, mc.getMonsterDifficulty());
 	}
+
 	
 	
 

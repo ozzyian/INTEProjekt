@@ -29,14 +29,10 @@ public class MonsterCharacter extends GameCharacter{
 		} 
 	}
 	
-	public int getDamage() {
-		if(diff == Difficulty.EASY) {
-			return getStrength();
-		}else if(diff == Difficulty.MEDIUM) {
-			return getStrength()*2;
-		}else {
-			return getStrength()*3;
-		}
+
+	
+	public Difficulty getMonsterDifficulty() {
+		return diff;
 	}
 
 }
