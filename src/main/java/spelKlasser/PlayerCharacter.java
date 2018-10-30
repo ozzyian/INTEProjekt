@@ -74,23 +74,28 @@ public class PlayerCharacter extends GameCharacter {
 
 	
 	public void calculateValues() {
-
+		boolean specialCaseTwoItemsOne = outfit.containsKey(ItemType.LEG) && outfit.containsKey(ItemType.BOOTS);
 		
-		for(Map.Entry<ItemType, Item> i : outfit.entrySet()) {
-			Item item = i.getValue();
-			switch(item.getItemType()) {
-			case CHEST: 
-				setTotalDamageReduction(0.5);
-				break;
-			case LEG: 
-				setTotalDamageReduction(0.7);
-				break;
-			case GLOVES: 
-				setTotalDamageReduction(0.8);
-				break;
-			case BOOTS: 
-				setTotalVelocityModifier(1.25);
-				break;
+		if(specialCaseTwoItemsOne) {
+			setTotalVelocityModifier(1.2);
+			setTotalDamageReduction(0.7);
+		}else {
+		
+			for(Map.Entry<ItemType, Item> i : outfit.entrySet()) {
+				Item item = i.getValue();
+				switch(item.getItemType()) {
+				case CHEST: 
+					setTotalDamageReduction(0.5);
+					break;
+				case LEG: 
+					setTotalDamageReduction(0.7);
+					break;
+				case GLOVES: 
+					setTotalDamageReduction(0.8);
+					break;
+				case BOOTS: 
+					setTotalVelocityModifier(1.25);
+					break;
 				
 			}
 		}
@@ -98,9 +103,10 @@ public class PlayerCharacter extends GameCharacter {
 		
 		
 		
+		}
 	}
 	
-	
+
 
 
 }

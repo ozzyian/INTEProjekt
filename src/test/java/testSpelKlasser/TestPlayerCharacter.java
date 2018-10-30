@@ -169,8 +169,7 @@ class TestPlayerCharacter {
 		pc.setOutfit(outfit);
 		pc.calculateValues();
 		double[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
-		assertArrayEquals(expected, actual);
-		
+		assertArrayEquals(expected, actual);	
 	}
 	
 }
