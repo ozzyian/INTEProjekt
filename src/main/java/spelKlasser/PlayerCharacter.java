@@ -66,6 +66,7 @@ public class PlayerCharacter extends GameCharacter {
 		return arrayOutfit;
 	}
 	public void setOutfit(Item[] items) {
+		outfit.clear();
 		for(int i=0; i<items.length; i++) {
 			Item item = items[i];
 			outfit.put(item.getItemType(), item);
@@ -74,8 +75,8 @@ public class PlayerCharacter extends GameCharacter {
 
 	
 	public void calculateValues() {
-		boolean specialCaseTwoItemsOne = outfit.containsKey(ItemType.LEG) && outfit.containsKey(ItemType.BOOTS);
-		int tempDmgReduc = 0;
+		boolean specialCaseTwoItemsOne = outfit.size() == 2 && outfit.containsKey(ItemType.LEG) && outfit.containsKey(ItemType.BOOTS);
+		double tempDmgReduc = 0;
 		if(specialCaseTwoItemsOne) {
 			setTotalVelocityModifier(1.2);
 			setTotalDamageReduction(0.7);
@@ -85,20 +86,24 @@ public class PlayerCharacter extends GameCharacter {
 				Item item = i.getValue();
 				switch(item.getItemType()) {
 				case CHEST: 
-					tempDmgReduc += 50;
+					tempDmgReduc += 0.50;
 					break;
 				case LEG: 
-					tempDmgReduc += 30;
+					tempDmgReduc += 0.30;
 					break;
 				case GLOVES: 
-					tempDmgReduc += 20;
+					tempDmgReduc += 0.20;
 					break;
 				case BOOTS: 
 					setTotalVelocityModifier(1.25);
 					break;
 				
 				}
-			setTotalDamageReduction(1-(tempDmgReduc/100));
+				
+				if(tempDmgReduc!=0) {
+				setTotalDamageReduction(1-tempDmgReduc);
+				}
+			
 			
 			}
 		

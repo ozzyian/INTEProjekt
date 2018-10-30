@@ -173,7 +173,7 @@ class TestPlayerCharacter {
 	}
 	@Test
 	void testCase7() {
-		double[] expected = {0.5, 1.2};
+		double[] expected = {0.5, 0};
 		Item[] outfit = {new Item(ItemType.LEG), new Item(ItemType.GLOVES)};
 		pc.setOutfit(outfit);
 		pc.calculateValues();
