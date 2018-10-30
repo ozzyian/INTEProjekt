@@ -200,4 +200,14 @@ class TestPlayerCharacter {
 		double[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()}; 
 		assertArrayEquals(expected, actual);
 	}
+	
+	@Test
+	void testCase10() {
+		double[] expected = {0.5, 1.2};
+		Item[] outfit = {new Item(ItemType.CHEST), new Item(ItemType.BOOTS)};
+		pc.setOutfit(outfit);
+		pc.calculateValues();
+		double[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()}; 
+		assertArrayEquals(expected, actual);
+	}
 }
