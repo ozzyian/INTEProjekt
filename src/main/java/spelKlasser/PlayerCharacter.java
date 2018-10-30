@@ -80,16 +80,13 @@ public class PlayerCharacter extends GameCharacter {
 		boolean specialCaseTwoItemsTwo = outfit.size() == 2 && outfit.containsKey(ItemType.CHEST) && outfit.containsKey(ItemType.BOOTS); 
 		
 		double tempDmgReduc = 0;
+		
 		if(specialCaseTwoItemsOne) {
-			setTotalVelocityModifier(1.2);
-			setTotalDamageReduction(0.7);
-		}else if(specialCaseThreeItemsOne) {
-			setTotalVelocityModifier(1.2);
-			setTotalDamageReduction(0.5);
-			
-		}else if(specialCaseTwoItemsTwo){
-			setTotalVelocityModifier(1.2); 
-			setTotalDamageReduction(0.5);
+			setModifiers(1.2, 0.7);
+
+		}else if(specialCaseThreeItemsOne || specialCaseTwoItemsTwo) {
+			setModifiers(1.2, 0.5);
+		
 		}else {
 		
 			for(Map.Entry<ItemType, Item> i : outfit.entrySet()) {

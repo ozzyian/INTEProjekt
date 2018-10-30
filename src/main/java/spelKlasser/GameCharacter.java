@@ -63,7 +63,10 @@ public abstract class GameCharacter {
 	public double getTotalVelocityModifier() {
 		return totalVelocityModifier;
 	}
-	
+	public void setModifiers(double velocity, double damage) { 
+		setTotalVelocityModifier(velocity); 
+		setTotalDamageReduction(damage);
+	}
 	public void setTotalVelocityModifier(double modifier) { 
 		totalVelocityModifier = modifier;
 	}
