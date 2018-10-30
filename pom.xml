@@ -3,6 +3,7 @@
   <groupId>dsv.su.se</groupId>
   <artifactId>INTE</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <!-- <packaging>jar</packaging>  -->
   <name>Spel</name>
   <description>Projekt för INTE uppgift</description>
 
