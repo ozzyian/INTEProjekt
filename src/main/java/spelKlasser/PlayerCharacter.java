@@ -75,7 +75,7 @@ public class PlayerCharacter extends GameCharacter {
 	
 	public void calculateValues() {
 		boolean specialCaseTwoItemsOne = outfit.containsKey(ItemType.LEG) && outfit.containsKey(ItemType.BOOTS);
-		
+		int tempDmgReduc = 0;
 		if(specialCaseTwoItemsOne) {
 			setTotalVelocityModifier(1.2);
 			setTotalDamageReduction(0.7);
@@ -85,20 +85,22 @@ public class PlayerCharacter extends GameCharacter {
 				Item item = i.getValue();
 				switch(item.getItemType()) {
 				case CHEST: 
-					setTotalDamageReduction(0.5);
+					tempDmgReduc += 50;
 					break;
 				case LEG: 
-					setTotalDamageReduction(0.7);
+					tempDmgReduc += 30;
 					break;
 				case GLOVES: 
-					setTotalDamageReduction(0.8);
+					tempDmgReduc += 20;
 					break;
 				case BOOTS: 
 					setTotalVelocityModifier(1.25);
 					break;
 				
+				}
+			setTotalDamageReduction(1-(tempDmgReduc/100));
+			
 			}
-		}
 		
 		
 		
