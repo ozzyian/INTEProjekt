@@ -105,109 +105,171 @@ class TestPlayerCharacter {
 	}
 	@Test
 	void testSetTotalVelocityModifier() {
-		pc.setTotalVelocityModifier(0.5);
-		assertEquals(0.5, pc.getTotalVelocityModifier());
+		pc.setTotalVelocityModifier(50);
+		assertEquals(50, pc.getTotalVelocityModifier());
 		
 	}
 	@Test
 	void testSetTotalDamageReduction() {
-		pc.setTotalDamageReduction(0.5);
-		assertEquals(0.5, pc.getTotalDamageReduction());
+		pc.setTotalDamageReduction(50);
+		assertEquals(50, pc.getTotalDamageReduction());
 	}
 	
 	@Test 
 	void testCase1() {
-		double[] expected = {0,0}; 
-		double[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
+		int[] expected = {0,0}; 
+		int[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
 		assertArrayEquals(expected, actual); 
 	}
 	
 	@Test 
 	void testCase2() {
-		double[] expected = {0, 1.25};
+		int[] expected = {0, 125};
 		Item[] outfit = {new Item(ItemType.BOOTS)};
 		pc.setOutfit(outfit);
 		pc.calculateValues();
-		double[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
+		int[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
 		assertArrayEquals(expected, actual);
 		
 	}
 	
 	@Test 
 	void testCase3() {
-		double[] expected = {0.8 , 0}; 
+		int[] expected = {80 , 0}; 
 		Item[] outfit = {new Item(ItemType.GLOVES)}; 
 		pc.setOutfit(outfit);
 		pc.calculateValues();
-		double[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()}; 
+		int[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()}; 
 		assertArrayEquals(expected, actual);
 	}
 	@Test
 	void testCase4() {
-		double[] expected = {0.8, 1.25};
+		int[] expected = {80, 125};
 		Item[] outfit = {new Item(ItemType.GLOVES), new Item(ItemType.BOOTS)};
 		pc.setOutfit(outfit);
 		pc.calculateValues();
-		double[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
+		int[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
 		assertArrayEquals(expected, actual);
 	}
 	
 	@Test 
 	void testCase5(){
-		double[] expected = {0.7, 0};
+		int[] expected = {70, 0};
 		Item[] outfit = {new Item(ItemType.LEG)};
 		pc.setOutfit(outfit);
 		pc.calculateValues();
-		double[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
+		int[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
 		assertArrayEquals(expected, actual);
 	}
 	
 	@Test
 	void testCase6() {
-		double[] expected = {0.7, 1.2};
+		int[] expected = {70, 120};
 		Item[] outfit = {new Item(ItemType.LEG), new Item(ItemType.BOOTS)};
 		pc.setOutfit(outfit);
 		pc.calculateValues();
-		double[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
+		int[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
 		assertArrayEquals(expected, actual);	
 	}
 	@Test
 	void testCase7() {
-		double[] expected = {0.5, 0};
+		int[] expected = {50, 0};
 		Item[] outfit = {new Item(ItemType.LEG), new Item(ItemType.GLOVES)};
 		pc.setOutfit(outfit);
 		pc.calculateValues();
-		double[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
+		int[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
 		assertArrayEquals(expected, actual);
 	}
 	
 	@Test 
 	void testCase8() {
-		double[] expected = {0.5, 1.2}; 
+		int[] expected = {50, 120}; 
 		Item[] outfit = {new Item(ItemType.LEG), new Item(ItemType.GLOVES), new Item(ItemType.BOOTS)};
 		pc.setOutfit(outfit);
 		pc.calculateValues();
-		double[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()}; 
+		int[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()}; 
 		assertArrayEquals(expected, actual); 
 	}
 	
 	@Test
 	void testCase9() {
-		double[] expected = {0.5, 0}; 
+		int[] expected = {50, 0}; 
 		Item[] outfit = {new Item(ItemType.CHEST)};
 		pc.setOutfit(outfit);
 		pc.calculateValues();
-		double[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()}; 
+		int[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()}; 
 		assertArrayEquals(expected, actual);
 	}
 	
 	@Test
 	void testCase10() {
-		double[] expected = {0.5, 1.2};
+		int[] expected = {50, 120};
 		Item[] outfit = {new Item(ItemType.CHEST), new Item(ItemType.BOOTS)};
 		pc.setOutfit(outfit);
 		pc.calculateValues();
-		double[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()}; 
+		int[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()}; 
+		assertArrayEquals(expected, actual);
+	}
+	
+	@Test
+	void testCase11() {
+		int[] expected = {30, 0};
+		Item[] outfit = {new Item(ItemType.CHEST), new Item(ItemType.GLOVES)};
+		pc.setOutfit(outfit);
+		pc.calculateValues();
+		int[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
+		assertArrayEquals(expected, actual);
+	}
+	
+	@Test
+	void testCase12() {
+		int[] expected = {30, 115};
+		Item[] outfit = {new Item(ItemType.CHEST), new Item(ItemType.GLOVES), new Item(ItemType.BOOTS)};
+		pc.setOutfit(outfit);
+		pc.calculateValues();
+		int[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
+		assertArrayEquals(expected, actual);
+	}
+	
+	@Test
+	void testCase13() {
+		int[] expected = {20, 0};
+		Item[] outfit = {new Item(ItemType.CHEST), new Item(ItemType.LEG)};
+		pc.setOutfit(outfit);
+		pc.calculateValues();
+		int[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
+		assertArrayEquals(expected, actual);
+	}
+	
+	@Test
+	void testCase14() {
+		int[] expected = {20, 115};
+		Item[] outfit = {new Item(ItemType.CHEST), new Item(ItemType.LEG), new Item(ItemType.BOOTS)};
+		pc.setOutfit(outfit);
+		pc.calculateValues();
+		int[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
+		assertArrayEquals(expected, actual);
+	}
+	
+	@Test
+	void testCase15() {
+		int[] expected = {10, 0};
+		Item[] outfit = {new Item(ItemType.CHEST), new Item(ItemType.LEG), new Item(ItemType.GLOVES)};
+		pc.setOutfit(outfit);
+		pc.calculateValues();
+		int[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
+		assertArrayEquals(expected, actual);
+	}
+	
+	@Test
+	void testCase16() {
+		int[] expected = {10, 105};
+		Item[] outfit = {new Item(ItemType.CHEST), new Item(ItemType.LEG), new Item(ItemType.GLOVES), new Item(ItemType.BOOTS)};
+		pc.setOutfit(outfit);
+		pc.calculateValues();
+		int[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
 		assertArrayEquals(expected, actual);
 	}
 }
+
+

@@ -78,37 +78,54 @@ public class PlayerCharacter extends GameCharacter {
 		boolean specialCaseTwoItemsOne = outfit.size() == 2 && outfit.containsKey(ItemType.LEG) && outfit.containsKey(ItemType.BOOTS);
 		boolean specialCaseThreeItemsOne = outfit.size() == 3 && outfit.containsKey(ItemType.LEG) && outfit.containsKey(ItemType.GLOVES) && outfit.containsKey(ItemType.BOOTS);
 		boolean specialCaseTwoItemsTwo = outfit.size() == 2 && outfit.containsKey(ItemType.CHEST) && outfit.containsKey(ItemType.BOOTS); 
+		boolean specialCaseThreeItemsTwo = outfit.size() == 3 && outfit.containsKey(ItemType.CHEST) && outfit.containsKey(ItemType.GLOVES) && outfit.containsKey(ItemType.BOOTS);
+		boolean specialCaseThreeItemsThree = outfit.size() == 3 && outfit.containsKey(ItemType.CHEST) && outfit.containsKey(ItemType.LEG) && outfit.containsKey(ItemType.BOOTS);
+		boolean specialCaseThreeItemsFour = outfit.size() == 3 && outfit.containsKey(ItemType.CHEST) && outfit.containsKey(ItemType.LEG) && outfit.containsKey(ItemType.GLOVES);
+		boolean specialCaseFourItemsOne = outfit.size() == 4 && outfit.containsKey(ItemType.CHEST) && outfit.containsKey(ItemType.LEG) && outfit.containsKey(ItemType.BOOTS) && outfit.containsKey(ItemType.GLOVES);
+
 		
-		double tempDmgReduc = 0;
+		int tempDmgReduc = 0;
 		
 		if(specialCaseTwoItemsOne) {
-			setModifiers(1.2, 0.7);
+			setModifiers(120, 70);
 
 		}else if(specialCaseThreeItemsOne || specialCaseTwoItemsTwo) {
-			setModifiers(1.2, 0.5);
+			setModifiers(120, 50);
 		
-		}else {
+		}else if(specialCaseThreeItemsTwo) {
+			setModifiers(115, 30);
+			
+		}else if(specialCaseThreeItemsThree) {
+			setModifiers(115, 20);
+			
+		}else if(specialCaseThreeItemsFour) {
+			setModifiers(0, 10);
+			
+		}else if(specialCaseFourItemsOne) {
+			setModifiers(105, 10);
+		}
+		else {
 		
 			for(Map.Entry<ItemType, Item> i : outfit.entrySet()) {
 				Item item = i.getValue();
 				switch(item.getItemType()) {
 				case CHEST: 
-					tempDmgReduc += 0.50;
+					tempDmgReduc += 50;
 					break;
 				case LEG: 
-					tempDmgReduc += 0.30;
+					tempDmgReduc += 30;
 					break;
 				case GLOVES: 
-					tempDmgReduc += 0.20;
+					tempDmgReduc += 20;
 					break;
 				case BOOTS: 
-					setTotalVelocityModifier(1.25);
+					setTotalVelocityModifier(125);
 					break;
 				
 				}
 				
 				if(tempDmgReduc!=0) {
-					setTotalDamageReduction(1-tempDmgReduc);
+					setTotalDamageReduction(100-tempDmgReduc);
 				}
 			
 			
