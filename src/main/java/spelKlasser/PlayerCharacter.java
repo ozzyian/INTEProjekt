@@ -77,6 +77,7 @@ public class PlayerCharacter extends GameCharacter {
 	public void calculateValues() {
 		boolean specialCaseTwoItemsOne = outfit.size() == 2 && outfit.containsKey(ItemType.LEG) && outfit.containsKey(ItemType.BOOTS);
 		boolean specialCaseThreeItemsOne = outfit.size() == 3 && outfit.containsKey(ItemType.LEG) && outfit.containsKey(ItemType.GLOVES) && outfit.containsKey(ItemType.BOOTS);
+		boolean specialCaseTwoItemsTwo = outfit.size() == 2 && outfit.containsKey(ItemType.CHEST) && outfit.containsKey(ItemType.BOOTS); 
 		
 		double tempDmgReduc = 0;
 		if(specialCaseTwoItemsOne) {
@@ -86,6 +87,9 @@ public class PlayerCharacter extends GameCharacter {
 			setTotalVelocityModifier(1.2);
 			setTotalDamageReduction(0.5);
 			
+		}else if(specialCaseTwoItemsTwo){
+			setTotalVelocityModifier(1.2); 
+			setTotalDamageReduction(0.5);
 		}else {
 		
 			for(Map.Entry<ItemType, Item> i : outfit.entrySet()) {
