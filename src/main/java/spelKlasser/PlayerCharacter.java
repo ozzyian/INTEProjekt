@@ -74,23 +74,22 @@ public class PlayerCharacter extends GameCharacter {
 
 	
 	public void calculateValues() {
-		double totalDamageReduction=0;
-		double totalVelocityModifier=0;
+
 		
 		for(Map.Entry<ItemType, Item> i : outfit.entrySet()) {
 			Item item = i.getValue();
 			switch(item.getItemType()) {
 			case CHEST: 
-				totalDamageReduction += 0.50;
+				setTotalDamageReduction(0.5);
 				break;
 			case LEG: 
-				totalDamageReduction += 0.70;
+				setTotalDamageReduction(0.7);
 				break;
 			case GLOVES: 
-				totalDamageReduction += 0.80;
+				setTotalDamageReduction(0.8);
 				break;
 			case BOOTS: 
-				totalVelocityModifier = 1.25;
+				setTotalVelocityModifier(1.25);
 				break;
 				
 			}

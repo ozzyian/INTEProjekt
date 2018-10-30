@@ -2,8 +2,9 @@ package testSpelKlasser;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeEach;
+
 import spelKlasser.Difficulty;
-import spelKlasser.Effect;
 import spelKlasser.Item;
 import spelKlasser.ItemType;
 import spelKlasser.MonsterCharacter;
@@ -11,7 +12,12 @@ import spelKlasser.PlayerCharacter;
 import org.junit.jupiter.api.Test;
 
 class TestPlayerCharacter {
-	PlayerCharacter pc = new PlayerCharacter("Hulken");
+	PlayerCharacter pc;
+	
+	@BeforeEach
+	void setUp() {
+		pc = new PlayerCharacter("player");
+	}
 	
 	@Test
 	void testGetArmor() {
@@ -84,25 +90,35 @@ class TestPlayerCharacter {
 	@Test
 	void testGetOutfit() {
 		Item[] expected = new Item[0];
-		expected = pc.getOutfit();
 		assertArrayEquals(expected, pc.getOutfit());
 		
 	}
 	
 	@Test 
 	void testDamageReduction() {
-		assertEquals(0, pc.getDamageReduction());
+		assertEquals(0, pc.getTotalDamageReduction());
 	}
 	
 	@Test 
 	void testVelocityModifier() {
-		assertEquals(0, pc.getVelocityModifier());
+		assertEquals(0, pc.getTotalVelocityModifier());
+	}
+	@Test
+	void testSetTotalVelocityModifier() {
+		pc.setTotalVelocityModifier(0.5);
+		assertEquals(0.5, pc.getTotalVelocityModifier());
+		
+	}
+	@Test
+	void testSetTotalDamageReduction() {
+		pc.setTotalDamageReduction(0.5);
+		assertEquals(0.5, pc.getTotalDamageReduction());
 	}
 	
 	@Test 
 	void testCase1() {
 		double[] expected = {0,0}; 
-		double[] actual = {pc.getDamageReduction(), pc.getVelocityModifier()};
+		double[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
 		assertArrayEquals(expected, actual); 
 	}
 	
