@@ -3,6 +3,7 @@ package spelKlasser;
 public class MapBuilder {
 	private Tile[][] tiles;
 	private int width, height;
+	private boolean mapBuildSuccessful;
 	
 	public MapBuilder(int width, int height) {
 		this.width = width;
@@ -53,10 +54,18 @@ public class MapBuilder {
 			}
 			tiles = tiles2;
 		}
+		setMapBuildSuccessful(true);
 		return this;
 	}
 	
 	public MapBuilder createRooms() {
 		return randomize().mapFixer(8);
+	}
+	
+	public int getWidth() {return width;}
+	public int getHeight() {return height;}
+	public boolean isMapBuildSuccessful() {return mapBuildSuccessful;}
+	public void setMapBuildSuccessful(boolean mapBuildSuccessful) {
+		this.mapBuildSuccessful = mapBuildSuccessful;
 	}
 }
