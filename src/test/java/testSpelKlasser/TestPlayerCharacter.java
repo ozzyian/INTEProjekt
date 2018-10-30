@@ -133,14 +133,24 @@ class TestPlayerCharacter {
 		
 	}
 	
-//	@Test 
-//	void testCase3() {
-//		double[] expected = {0.8 , 0}; 
-//		boolean[] outfit = {false, false, true, false}; 
-//		pc.setOutfit(outfit);
-//		double[] actual = {pc.getDamageReduction(), pc.getVelocityModifier()}; 
-//		assertArrayEquals(expected, actual);
-//	}
+	@Test 
+	void testCase3() {
+		double[] expected = {0.8 , 0}; 
+		Item[] outfit = {new Item(ItemType.GLOVES)}; 
+		pc.setOutfit(outfit);
+		pc.calculateValues();
+		double[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()}; 
+		assertArrayEquals(expected, actual);
+	}
+	@Test
+	void testCase4() {
+		double[] expected = {0.8, 1.25};
+		Item[] outfit = {new Item(ItemType.GLOVES), new Item(ItemType.BOOTS)};
+		pc.setOutfit(outfit);
+		pc.calculateValues();
+		double[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
+		assertArrayEquals(expected, actual);
+	}
 	
 	
 }

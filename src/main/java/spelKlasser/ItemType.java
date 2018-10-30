@@ -1,5 +1,5 @@
 package spelKlasser;
 
 public enum ItemType {
-	CHEST, LEG, GLOVES, BOOTS
+	CHEST, LEG, GLOVES, BOOTS,
 }
