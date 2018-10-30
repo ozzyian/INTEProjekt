@@ -101,7 +101,7 @@ public class PlayerCharacter extends GameCharacter {
 				}
 				
 				if(tempDmgReduc!=0) {
-				setTotalDamageReduction(1-tempDmgReduc);
+					setTotalDamageReduction(1-tempDmgReduc);
 				}
 			
 			
