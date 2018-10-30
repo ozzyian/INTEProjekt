@@ -3,6 +3,9 @@ package testSpelKlasser;
 import static org.junit.jupiter.api.Assertions.*;
 
 import spelKlasser.Difficulty;
+import spelKlasser.Effect;
+import spelKlasser.Item;
+import spelKlasser.ItemType;
 import spelKlasser.MonsterCharacter;
 import spelKlasser.PlayerCharacter;
 import org.junit.jupiter.api.Test;
@@ -77,5 +80,51 @@ class TestPlayerCharacter {
 		pc.gainFearlessModifier();
 		assertEquals(10, pc.getAttackDamage());
 	}
+	
+	@Test
+	void testGetOutfit() {
+		Item[] expected = new Item[0];
+		expected = pc.getOutfit();
+		assertArrayEquals(expected, pc.getOutfit());
+		
+	}
+	
+	@Test 
+	void testDamageReduction() {
+		assertEquals(0, pc.getDamageReduction());
+	}
+	
+	@Test 
+	void testVelocityModifier() {
+		assertEquals(0, pc.getVelocityModifier());
+	}
+	
+	@Test 
+	void testCase1() {
+		double[] expected = {0,0}; 
+		double[] actual = {pc.getDamageReduction(), pc.getVelocityModifier()};
+		assertArrayEquals(expected, actual); 
+	}
+	
+	@Test 
+	void testCase2() {
+		double[] expected = {0, 1.25};
+		Item[] outfit = {new Item(ItemType.BOOTS)};
+		pc.setOutfit(outfit);
+		pc.calculateValues();
+		double[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
+		assertArrayEquals(expected, actual);
+		
+	}
+	
+//	@Test 
+//	void testCase3() {
+//		double[] expected = {0.8 , 0}; 
+//		boolean[] outfit = {false, false, true, false}; 
+//		pc.setOutfit(outfit);
+//		double[] actual = {pc.getDamageReduction(), pc.getVelocityModifier()}; 
+//		assertArrayEquals(expected, actual);
+//	}
+	
 	
 }

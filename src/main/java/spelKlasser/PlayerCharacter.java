@@ -1,9 +1,13 @@
 package spelKlasser;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class PlayerCharacter extends GameCharacter {
 	
 	private int experience, level;
 	private boolean fearlessBuff, fearlessActivated, fleeingStatus;
+	private Map<ItemType,Item> outfit = new HashMap<ItemType, Item>();
 	
 	public PlayerCharacter(String name) { 
 		super(name); 
@@ -42,10 +46,62 @@ public class PlayerCharacter extends GameCharacter {
 	public void gainFearlessModifier() {
 		setAttackDamage(getAttackDamage() + 10);
 	}
+
 	public void setFleeingStatus(boolean flee) {
 		fleeingStatus = flee;
 	}
 	public boolean getFleeingStatus() {
 		return fleeingStatus;
 	}
+	
+	public Item[] getOutfit() {
+		Item[] arrayOutfit = new Item[outfit.size()]; 
+		int i = 0;
+		for(Map.Entry<ItemType, Item> mapValue: outfit.entrySet()) {
+			Item item = mapValue.getValue(); 
+			arrayOutfit[i] = item;
+			i++;
+		}
+		
+		return arrayOutfit;
+	}
+	public void setOutfit(Item[] items) {
+		for(int i=0; i<items.length; i++) {
+			Item item = items[i];
+			outfit.put(item.getItemType(), item);
+		}
+	}
+
+	
+	public void calculateValues() {
+		double totalDamageReduction=0;
+		double totalVelocityModifier=0;
+		
+		for(Map.Entry<ItemType, Item> i : outfit.entrySet()) {
+			Item item = i.getValue();
+			switch(item.getItemType()) {
+			case CHEST: 
+				totalDamageReduction += 0.50;
+				break;
+			case LEG: 
+				totalDamageReduction += 0.70;
+				break;
+			case GLOVES: 
+				totalDamageReduction += 0.80;
+				break;
+			case BOOTS: 
+				totalVelocityModifier = 1.25;
+				break;
+				
+			}
+		}
+		
+		
+		
+		
+	}
+	
+	
+
+
 }
