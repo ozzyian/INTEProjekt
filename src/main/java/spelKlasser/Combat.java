@@ -7,7 +7,7 @@ public class Combat {
 	private MonsterCharacter monster;
 	private GameCharacter[] attackOrder;
 	private GameCharacter winner;
-	private GameCharacter reciever;
+	private GameCharacter receiver;
 	private GameCharacter attacker;
 
 
@@ -64,15 +64,15 @@ public class Combat {
 	public void startCombat() {
 
 		GameCharacter temp;
-		reciever = attackOrder[1];
+		receiver = attackOrder[1];
 		attacker = attackOrder[0];
 		
 		while(true) {
-			reciever.damageTaken(attacker);
-			if (reciever.isDead()) {
+			receiver.damageTaken(attacker);
+			if (receiver.isDead()) {
 				break;
 			}
-			if (reciever instanceof PlayerCharacter && reciever.getBaseHealth()<10 && reciever.getBaseHealth()>0){
+			if (receiver instanceof PlayerCharacter && receiver.getBaseHealth()<10 && receiver.getBaseHealth()>0){
 
 				if(player.getFearlessBuff()) {
 					if(!player.getFearlessStatus()) {
@@ -84,8 +84,8 @@ public class Combat {
 				}
 			}
 			
-			temp = reciever;
-			reciever = attacker;
+			temp = receiver;
+			receiver = attacker;
 			attacker = temp;
 
 			
