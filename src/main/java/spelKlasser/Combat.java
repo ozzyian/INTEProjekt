@@ -111,9 +111,6 @@ public class Combat {
 	}
 
 	
-	public boolean checkFearlessActivation() {
-		return player.getFearlessStatus();
-	}
 
 
 }

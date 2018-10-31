@@ -60,12 +60,6 @@ class TestCombat {
 	
 	
 	@Test 
-	void testCheckFearlessActivation() {
-		player.setFearlessActivated(true);
-		assertTrue(c.checkFearlessActivation());
-	}
-	
-	@Test 
 	void testCase1() {
 		player.increaseAgility(); 
 		player.setBaseHealth(10);
