@@ -94,9 +94,22 @@ public class Combat {
 			winner = monster;
 		}
 		else {
+			increaseExperience(monster, player);
 			winner = player;
 		}
 		
+	}
+	
+	public void increaseExperience(MonsterCharacter monster, PlayerCharacter player) {
+		if (monster.getMonsterDifficulty() == Difficulty.EASY) {
+			player.increaseExperience(100);
+		} else if (monster.getMonsterDifficulty() == Difficulty.MEDIUM) {
+			player.increaseExperience(150);
+		} else if (monster.getMonsterDifficulty() == Difficulty.HARD) {
+			player.increaseExperience(200);
+		} else {
+			return; 
+		}
 	}
 	
 	public GameCharacter getWinner() {

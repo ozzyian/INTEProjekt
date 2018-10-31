@@ -68,4 +68,5 @@ public class MapBuilder {
 	public void setMapBuildSuccessful(boolean mapBuildSuccessful) {
 		this.mapBuildSuccessful = mapBuildSuccessful;
 	}
+
 }

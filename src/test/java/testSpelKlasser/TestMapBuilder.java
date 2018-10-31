@@ -27,5 +27,5 @@ class TestMapBuilder {
 		mb.createRooms();
 		assertEquals(true, mb.isMapBuildSuccessful());
 	}
-
+	
 }

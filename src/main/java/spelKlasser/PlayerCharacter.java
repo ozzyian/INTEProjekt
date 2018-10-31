@@ -1,5 +1,7 @@
 package spelKlasser;
 
+import static org.junit.jupiter.api.Assumptions.assumingThat;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,6 +23,19 @@ public class PlayerCharacter extends GameCharacter {
 	
 	public int getMaxHealth() {
 		return getStrength()*3 + getBaseHealth();
+	}
+	
+	public int getLevel() {
+		return level;
+	}
+	
+	public void increaseExperience(int experience) {
+		this.experience += experience;
+		int experienceCap = (100 * this.getLevel());
+		if (this.experience >= experienceCap) {
+			this.level++; 
+			this.experience -= experienceCap;
+		}
 	}
 	
 

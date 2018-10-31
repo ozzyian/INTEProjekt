@@ -58,6 +58,12 @@ class TestCombat {
 		assertArrayEquals(expected, c.getAttackOrder());
 	}
 	
+	@Test
+	void testIncreaseExperience() {
+		c.increaseExperience(monster, player);
+		assertEquals(2, player.getLevel());
+	}
+	
 	
 	@Test 
 	void testCase1() {

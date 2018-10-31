@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 
+import spelKlasser.Combat;
 import spelKlasser.Difficulty;
 import spelKlasser.Item;
 import spelKlasser.ItemType;
@@ -276,6 +277,25 @@ class TestPlayerCharacter {
 		pc.calculateValues();
 		int[] actual = {pc.getTotalDamageReduction(), pc.getTotalVelocityModifier()};
 		assertArrayEquals(expected, actual);
+	}
+	
+	@Test
+	void testLevel() {
+		pc.increaseExperience(100);
+		assertEquals(2, pc.getLevel());
+	}
+	
+	@Test
+	void testLeveling() {
+		MonsterCharacter monster = new MonsterCharacter(Difficulty.EASY, "monster");
+		PlayerCharacter player = new PlayerCharacter("player");
+		player.setAttackDamage(2);
+		monster.setBaseHealth(2);
+		Combat combat = new Combat(player, monster);
+		player.increaseAgility();
+		combat.setAttackOrder();
+		combat.startCombat();
+		assertEquals(2, player.getLevel());
 	}
 }
 
